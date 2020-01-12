@@ -26,7 +26,7 @@ class SearchWebService {
     init() { }
 
     // MARK: - Method
-    /// Netwoerk call to get recipes. In parameter : array orf string(ingredients). Callback returns Bool for success and Recipes object
+    /// Network call to get recipes. In parameter : array orf string(ingredients). Callback returns Bool for success and Recipes object
     func getRecipes(for ingredients: [String], callback: @escaping (Bool, Recipes?) -> Void) {
         let request = createRequest(ingredients: ingredients)
 
@@ -52,21 +52,18 @@ class SearchWebService {
     }
 
     /// Url GET request. In parameter : array of ingredients.
-    private func createRequest(ingredients: [String]) -> URLRequest {
+    func createRequest(ingredients: [String]) -> URLRequest {
         var components = URLComponents()
-        components.scheme = "https"
-        components.host = "api.edamam.com/search"
+        var request = URLRequest(url: components.url!)
         let queryItemApi = URLQueryItem(name: "app_key", value: apiManager.api)
         let queryItemAppId = URLQueryItem(name: "app_id", value: apiManager.appId)
+        components.scheme = "https"
+        components.host = "api.edamam.com/search"
         components.queryItems = [queryItemApi, queryItemAppId]
-        var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"
-        request.httpBody = "q=\(ingredientService.ingredients)".data(using: .utf8)
-        print(components.url!)
-        print(request.url!)
-        print(request.description)
-        print(components.description)
+        request.httpBody = "q=\(ingredients)".data(using: .utf8)
         return request
+
     }
     
   
