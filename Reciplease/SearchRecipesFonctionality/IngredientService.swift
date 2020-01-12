@@ -9,9 +9,9 @@
 import Foundation
 
 class IngredientService {
-    var ingredients: [Ingredient] = []
+    var ingredients: [String] = []
 
-    func add(ingredient: Ingredient) {
+    func add(ingredient: String) {
         ingredients.append(ingredient)
     }
     

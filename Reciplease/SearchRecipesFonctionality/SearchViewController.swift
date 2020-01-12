@@ -18,6 +18,7 @@ class SearchViewController: UIViewController {
     
     private let ingredientService = IngredientService()
     
+    
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
@@ -29,11 +30,11 @@ class SearchViewController: UIViewController {
         guard let name = addIngredientTextField.text, !name.isEmpty else {
             return
         }
-        let ingredient = Ingredient(name: name)
-        ingredientService.add(ingredient: ingredient)
+        ingredientService.add(ingredient: name)
         tableView.reloadData()
         addIngredientTextField.text = ""
     }
+    
     
     @IBAction func dismissKeyboard(_ sender: Any) {
         addIngredientTextField.resignFirstResponder()
@@ -43,7 +44,6 @@ class SearchViewController: UIViewController {
         ingredientService.removeAllIngredients()
         tableView.reloadData()
     }
-    
 }
 
 extension SearchViewController: UITableViewDataSource {
@@ -60,7 +60,7 @@ extension SearchViewController: UITableViewDataSource {
         
         let ingredient = ingredientService.ingredients[indexPath.row]
         
-        cell.textLabel?.text = "- \(ingredient.name)"
+        cell.textLabel?.text = "- \(ingredient)"
         
         return cell
     }

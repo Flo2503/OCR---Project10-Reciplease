@@ -1,5 +1,5 @@
 //
-//  Ingredient.swift
+//  SearchWebService.swift
 //  Reciplease
 //
 //  Created by Flo on 11/01/2020.
@@ -8,6 +8,3 @@
 
 import Foundation
 
-struct Ingredient {
-    var name = ""
-}

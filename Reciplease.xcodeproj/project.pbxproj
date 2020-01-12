@@ -8,16 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		3FB70EB45E498E81E4AC31E5 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD68E67755CC129F5595BFD /* Pods_Reciplease.framework */; };
+		5C4AB18C23C9EE47007CC952 /* SearchWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB18B23C9EE47007CC952 /* SearchWebService.swift */; };
 		5C71E32323C670F9004B7118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E32223C670F9004B7118 /* AppDelegate.swift */; };
 		5C71E32523C670F9004B7118 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E32423C670F9004B7118 /* SceneDelegate.swift */; };
 		5C71E32A23C670F9004B7118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C71E32823C670F9004B7118 /* Main.storyboard */; };
 		5C71E32D23C670F9004B7118 /* Reciplease.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E32B23C670F9004B7118 /* Reciplease.xcdatamodeld */; };
 		5C71E32F23C670FB004B7118 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5C71E32E23C670FB004B7118 /* Assets.xcassets */; };
 		5C71E33223C670FB004B7118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C71E33023C670FB004B7118 /* LaunchScreen.storyboard */; };
-		5C71E33D23C670FB004B7118 /* RecipleaseTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E33C23C670FB004B7118 /* RecipleaseTests.swift */; };
+		5C71E33D23C670FB004B7118 /* IngredientServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E33C23C670FB004B7118 /* IngredientServiceTestCase.swift */; };
 		5C71E34A23C68047004B7118 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E34923C68047004B7118 /* SearchViewController.swift */; };
 		5C71E34E23C80926004B7118 /* IngredientService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E34D23C80926004B7118 /* IngredientService.swift */; };
-		5C71E35223C939B0004B7118 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E35123C939B0004B7118 /* Ingredient.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -32,6 +32,7 @@
 
 /* Begin PBXFileReference section */
 		396C4301ADE097C663E62395 /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
+		5C4AB18B23C9EE47007CC952 /* SearchWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchWebService.swift; sourceTree = "<group>"; };
 		5C71E31F23C670F9004B7118 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C71E32223C670F9004B7118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C71E32423C670F9004B7118 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -41,11 +42,10 @@
 		5C71E33123C670FB004B7118 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5C71E33323C670FB004B7118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C71E33823C670FB004B7118 /* RecipleaseTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RecipleaseTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C71E33C23C670FB004B7118 /* RecipleaseTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseTests.swift; sourceTree = "<group>"; };
+		5C71E33C23C670FB004B7118 /* IngredientServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientServiceTestCase.swift; sourceTree = "<group>"; };
 		5C71E33E23C670FB004B7118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C71E34923C68047004B7118 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5C71E34D23C80926004B7118 /* IngredientService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IngredientService.swift; sourceTree = "<group>"; };
-		5C71E35123C939B0004B7118 /* Ingredient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
 		6AD68E67755CC129F5595BFD /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04004734A8E2A6579AD40BA /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -107,7 +107,7 @@
 				5C71E32E23C670FB004B7118 /* Assets.xcassets */,
 				5C71E33023C670FB004B7118 /* LaunchScreen.storyboard */,
 				5C71E33323C670FB004B7118 /* Info.plist */,
-				5C71E34C23C808EB004B7118 /* SearchRecipesFioncionality */,
+				5C71E34C23C808EB004B7118 /* SearchRecipesFonctionality */,
 				5C71E32B23C670F9004B7118 /* Reciplease.xcdatamodeld */,
 			);
 			path = Reciplease;
@@ -116,20 +116,20 @@
 		5C71E33B23C670FB004B7118 /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				5C71E33C23C670FB004B7118 /* RecipleaseTests.swift */,
+				5C71E33C23C670FB004B7118 /* IngredientServiceTestCase.swift */,
 				5C71E33E23C670FB004B7118 /* Info.plist */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
 		};
-		5C71E34C23C808EB004B7118 /* SearchRecipesFioncionality */ = {
+		5C71E34C23C808EB004B7118 /* SearchRecipesFonctionality */ = {
 			isa = PBXGroup;
 			children = (
 				5C71E34923C68047004B7118 /* SearchViewController.swift */,
+				5C4AB18B23C9EE47007CC952 /* SearchWebService.swift */,
 				5C71E34D23C80926004B7118 /* IngredientService.swift */,
-				5C71E35123C939B0004B7118 /* Ingredient.swift */,
 			);
-			path = SearchRecipesFioncionality;
+			path = SearchRecipesFonctionality;
 			sourceTree = "<group>";
 		};
 		B0DEAF34C0B3F3F03A5F19C3 /* Frameworks */ = {
@@ -287,7 +287,7 @@
 			files = (
 				5C71E34E23C80926004B7118 /* IngredientService.swift in Sources */,
 				5C71E32D23C670F9004B7118 /* Reciplease.xcdatamodeld in Sources */,
-				5C71E35223C939B0004B7118 /* Ingredient.swift in Sources */,
+				5C4AB18C23C9EE47007CC952 /* SearchWebService.swift in Sources */,
 				5C71E32323C670F9004B7118 /* AppDelegate.swift in Sources */,
 				5C71E34A23C68047004B7118 /* SearchViewController.swift in Sources */,
 				5C71E32523C670F9004B7118 /* SceneDelegate.swift in Sources */,
@@ -298,7 +298,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C71E33D23C670FB004B7118 /* RecipleaseTests.swift in Sources */,
+				5C71E33D23C670FB004B7118 /* IngredientServiceTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
