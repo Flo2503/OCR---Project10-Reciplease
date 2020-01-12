@@ -15,8 +15,8 @@ class SearchViewController: UIViewController {
         self.cornerRadius()
     }
 
-    
     private let ingredientService = IngredientService()
+    private let searchWebService = SearchWebService()
     
     
     @IBOutlet weak var clearButton: UIButton!
@@ -44,6 +44,10 @@ class SearchViewController: UIViewController {
         ingredientService.removeAllIngredients()
         tableView.reloadData()
     }
+    
+    @IBAction func searchRecipes(_ sender: Any) {
+    }
+    
 }
 
 extension SearchViewController: UITableViewDataSource {
