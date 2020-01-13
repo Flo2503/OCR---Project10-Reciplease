@@ -54,17 +54,16 @@ class SearchWebService {
     /// Url GET request. In parameter : array of ingredients.
     func createRequest(ingredients: [String]) -> URLRequest {
         var components = URLComponents()
-        var request = URLRequest(url: components.url!)
+        let stringIngredientsRepresentation = ingredients.joined(separator: ",")
         let queryItemApi = URLQueryItem(name: "app_key", value: apiManager.api)
         let queryItemAppId = URLQueryItem(name: "app_id", value: apiManager.appId)
+        let queryItemQ = URLQueryItem(name: "q", value: stringIngredientsRepresentation)
         components.scheme = "https"
-        components.host = "api.edamam.com/search"
-        components.queryItems = [queryItemApi, queryItemAppId]
+        components.host = "api.edamam.com"
+        components.path = "/search"
+        components.queryItems = [queryItemApi, queryItemAppId, queryItemQ]
+        var request = URLRequest(url: components.url!)
         request.httpMethod = "GET"
-        request.httpBody = "q=\(ingredients)".data(using: .utf8)
         return request
-
     }
-    
-  
 }

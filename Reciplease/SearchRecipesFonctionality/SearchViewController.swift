@@ -27,7 +27,7 @@ class SearchViewController: UIViewController {
     
     
     @IBAction func addIngredient(_ sender: Any) {
-        guard let name = addIngredientTextField.text, !name.isEmpty else {
+        guard let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty else {
             return
         }
         ingredientService.add(ingredient: name)
