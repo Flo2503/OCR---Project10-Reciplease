@@ -63,6 +63,7 @@
                                 </state>
                                 <connections>
                                     <action selector="searchRecipes:" destination="5Zf-ls-VBy" eventType="touchUpInside" id="vBF-JX-tt9"/>
+                                    <segue destination="mbm-be-eSL" kind="show" id="Hr7-R2-rpX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syd-5s-9pr">
@@ -195,6 +196,44 @@
                 </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="-871.01449275362324" y="-609.375"/>
+        </scene>
+        <!--Recipes List View Controller-->
+        <scene sceneID="4aW-Gd-cYe">
+            <objects>
+                <viewController id="mbm-be-eSL" customClass="RecipesListViewController" customModule="Reciplease" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="lXY-hb-0ck">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6zW-xE-1KI">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="PUk-VB-AdV">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PUk-VB-AdV" id="e8O-ZB-e5R">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="6zW-xE-1KI" firstAttribute="trailing" secondItem="r6c-g5-4wR" secondAttribute="trailing" id="eH8-4q-2MI"/>
+                            <constraint firstItem="6zW-xE-1KI" firstAttribute="bottom" secondItem="r6c-g5-4wR" secondAttribute="bottom" id="f3D-gI-nj4"/>
+                            <constraint firstItem="6zW-xE-1KI" firstAttribute="leading" secondItem="r6c-g5-4wR" secondAttribute="leading" id="i78-ow-YwC"/>
+                            <constraint firstItem="6zW-xE-1KI" firstAttribute="top" secondItem="r6c-g5-4wR" secondAttribute="top" id="sLe-ee-6sm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="r6c-g5-4wR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="hdb-mx-XKW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RzQ-4D-ath" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-7.2463768115942031" y="-609.375"/>
         </scene>
     </scenes>
 </document>

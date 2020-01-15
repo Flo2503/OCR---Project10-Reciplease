@@ -19,8 +19,8 @@ class SearchWebService {
     
 
     // Init allowing tests to access at "recipesSession" property for dependency injection.
-    init(translateSession: URLSession) {
-        self.recipesSession = translateSession
+    init(recipesSession: URLSession) {
+        self.recipesSession = recipesSession
     }
     // Default init
     init() { }
@@ -66,4 +66,5 @@ class SearchWebService {
         request.httpMethod = "GET"
         return request
     }
+    
 }
