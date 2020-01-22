@@ -14,7 +14,6 @@ class SearchWebService {
     private var recipesSession = URLSession(configuration: .default)
     private var task: URLSessionTask?
     private let apiManager = ApiManager()
-    private let ingredientService = IngredientService()
 
     
 
@@ -27,7 +26,7 @@ class SearchWebService {
 
     // MARK: - Method
     /// Network call to get recipes. In parameter : array orf string(ingredients). Callback returns Bool for success and Recipes object
-    func getRecipes(for ingredients: [String], callback: @escaping (Bool, Recipes?) -> Void) {
+    func getData(for ingredients: [String], callback: @escaping (Bool, Hit?) -> Void) {
         let request = createRequest(ingredients: ingredients)
 
         task?.cancel()
@@ -41,7 +40,7 @@ class SearchWebService {
                     return
                 }
                 do {
-                    let recipes = try JSONDecoder().decode(Recipes.self, from: data)
+                    let recipes = try JSONDecoder().decode(Hit.self, from: data)
                     callback(true, recipes)
                 } catch {
                     callback(false, nil)

@@ -14,24 +14,33 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         self.cornerRadius()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let recipesVC = segue.destination as! RecipesListViewController
+            recipesVC.ingredientsList = ingredientsList
+        }
+    }
 
-    private let ingredientService = IngredientService()
     private let searchWebService = SearchWebService()
+    private let segueIdentifier = "segueToRecipes"
+    var ingredientsList: [String] = []
+    
     
     
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addIngredientTextField: UITextField!
-    @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var ingredientsTableView: UITableView!
     
     
     @IBAction func addIngredient(_ sender: Any) {
         guard let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty else {
             return
         }
-        ingredientService.add(ingredient: name)
-        tableView.reloadData()
+        add(ingredient: name)
+        ingredientsTableView.reloadData()
         addIngredientTextField.text = ""
     }
     
@@ -41,11 +50,20 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func clearList(_ sender: Any) {
-        ingredientService.removeAllIngredients()
-        tableView.reloadData()
+        ingredientsList.removeAll()
+        ingredientsTableView.reloadData()
     }
     
     @IBAction func searchRecipes(_ sender: Any) {
+        performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
+    
+    private func removeIngredient(at index: Int) {
+        ingredientsList.remove(at: index)
+    }
+    
+    private func add(ingredient: String) {
+        ingredientsList.append(ingredient)
     }
     
 }
@@ -56,13 +74,13 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ingredientService.ingredients.count
+        return ingredientsList.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "IngredientCell", for: indexPath)
         
-        let ingredient = ingredientService.ingredients[indexPath.row]
+        let ingredient = ingredientsList[indexPath.row]
         
         cell.textLabel?.text = "- \(ingredient)"
         
@@ -74,7 +92,7 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            ingredientService.removeIngredient(at: indexPath.row)
+            removeIngredient(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
     }

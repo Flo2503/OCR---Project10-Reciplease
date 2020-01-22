@@ -16,7 +16,7 @@ class RecipesServiceTestCase: XCTestCase {
 
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
-        recipesService.getRecipes(for: ["chicken", "cheese"], callback: { (success, recipes) in
+        recipesService.getData(for: ["chicken", "cheese"], callback: { (success, recipes) in
             XCTAssertFalse(success)
             XCTAssertNil(recipes)
             expectation.fulfill()
@@ -30,7 +30,7 @@ class RecipesServiceTestCase: XCTestCase {
 
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
-        recipesService.getRecipes(for: ["chicken", "cheese"], callback: { (success, recipes) in
+        recipesService.getData(for: ["chicken", "cheese"], callback: { (success, recipes) in
             XCTAssertFalse(success)
             XCTAssertNil(recipes)
             expectation.fulfill()
@@ -48,7 +48,7 @@ class RecipesServiceTestCase: XCTestCase {
 
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
-        recipesService.getRecipes(for: ["chicken", "cheese"], callback: { (success, recipes) in
+        recipesService.getData(for: ["chicken", "cheese"], callback: { (success, recipes) in
             XCTAssertFalse(success)
             XCTAssertNil(recipes)
             expectation.fulfill()
@@ -66,7 +66,7 @@ class RecipesServiceTestCase: XCTestCase {
 
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
-        recipesService.getRecipes(for: ["chicken", "cheese"], callback: { (success, recipes) in
+        recipesService.getData(for: ["chicken", "cheese"], callback: { (success, recipes) in
             XCTAssertFalse(success)
             XCTAssertNil(recipes)
             expectation.fulfill()
@@ -82,7 +82,7 @@ class RecipesServiceTestCase: XCTestCase {
 
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
-        recipesService.getRecipes(for: ["chicken", "cheese"], callback: { (success, recipes) in
+        recipesService.getData(for: ["chicken", "cheese"], callback: { (success, recipes) in
             XCTAssertTrue(success)
             XCTAssertNotNil(recipes)
 

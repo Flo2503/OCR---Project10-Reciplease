@@ -8,6 +8,14 @@
 
 import Foundation
 
+struct EdamamRecipes: Decodable {
+    let hits: [Hit]
+}
+
+struct Hit: Decodable {
+    let recipe: Recipes
+}
+
 struct Recipes: Decodable {
     let label: String
     let image: String

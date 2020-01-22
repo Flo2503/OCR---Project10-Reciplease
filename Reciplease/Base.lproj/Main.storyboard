@@ -63,7 +63,6 @@
                                 </state>
                                 <connections>
                                     <action selector="searchRecipes:" destination="5Zf-ls-VBy" eventType="touchUpInside" id="vBF-JX-tt9"/>
-                                    <segue destination="mbm-be-eSL" kind="show" id="Hr7-R2-rpX"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="syd-5s-9pr">
@@ -184,8 +183,9 @@
                         <outlet property="addButton" destination="ssN-ac-cA7" id="cxg-RQ-Xl7"/>
                         <outlet property="addIngredientTextField" destination="vkQ-S0-8ZQ" id="QiK-nd-bWq"/>
                         <outlet property="clearButton" destination="syd-5s-9pr" id="m49-ai-UL6"/>
+                        <outlet property="ingredientsTableView" destination="ogi-pS-jXA" id="WWz-1Q-7RY"/>
                         <outlet property="searchButton" destination="Wqo-I9-nHF" id="Duk-9r-MvH"/>
-                        <outlet property="tableView" destination="ogi-pS-jXA" id="WWz-1Q-7RY"/>
+                        <segue destination="mbm-be-eSL" kind="show" identifier="segueToRecipes" id="cIG-1V-C8C"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="LDP-ce-GGM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -215,9 +215,13 @@
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PUk-VB-AdV" id="e8O-ZB-e5R">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="mbm-be-eSL" id="aF1-tv-Jdf"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -230,6 +234,9 @@
                         <viewLayoutGuide key="safeArea" id="r6c-g5-4wR"/>
                     </view>
                     <navigationItem key="navigationItem" id="hdb-mx-XKW"/>
+                    <connections>
+                        <outlet property="recipesTableView" destination="6zW-xE-1KI" id="eHB-lH-6Sh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RzQ-4D-ath" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
