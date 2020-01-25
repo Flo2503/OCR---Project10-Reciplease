@@ -12,11 +12,12 @@ class RecipesListViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        getRecipes()
     }
     
     let webService = SearchWebService()
     var ingredientsList: [String] = []
-    var recipesList = [Hit]()
+    var recipesList: EdamamRecipes?
     
     @IBOutlet weak var recipesTableView: UITableView!
     
@@ -25,7 +26,7 @@ class RecipesListViewController: UIViewController {
             guard success, let recipes = recipes else {
                 return self.errorNetworkAlert()
             }
-            recipesList = recipes
+            self.recipesList = recipes
         })
     }
     
@@ -37,8 +38,17 @@ extension RecipesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 1
+        guard let recipes = recipesList?.hits else {
+            return 0
+        }
+        return recipes.count
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath)
+        
+        cell.textLabel?.text = "Just a moment, we're looking for recipes"
+        return cell
+    }
     
 }

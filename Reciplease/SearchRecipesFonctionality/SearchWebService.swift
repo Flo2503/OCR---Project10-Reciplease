@@ -26,7 +26,7 @@ class SearchWebService {
 
     // MARK: - Method
     /// Network call to get recipes. In parameter : array orf string(ingredients). Callback returns Bool for success and Recipes object
-    func getData(for ingredients: [String], callback: @escaping (Bool, Hit?) -> Void) {
+    func getData(for ingredients: [String], callback: @escaping (Bool, EdamamRecipes?) -> Void) {
         let request = createRequest(ingredients: ingredients)
 
         task?.cancel()
@@ -40,7 +40,7 @@ class SearchWebService {
                     return
                 }
                 do {
-                    let recipes = try JSONDecoder().decode(Hit.self, from: data)
+                    let recipes = try JSONDecoder().decode(EdamamRecipes.self, from: data)
                     callback(true, recipes)
                 } catch {
                     callback(false, nil)
