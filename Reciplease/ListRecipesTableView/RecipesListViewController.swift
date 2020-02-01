@@ -80,6 +80,7 @@ extension RecipesListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath)
         
         cell.textLabel?.text = recipesList?.hits[indexPath.row].recipe.label
+        
         return cell
     }
     
