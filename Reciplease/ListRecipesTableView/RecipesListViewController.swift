@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class RecipesListViewController: UIViewController {
 
@@ -15,19 +16,50 @@ class RecipesListViewController: UIViewController {
         getRecipes()
     }
     
+   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let detailRecipeVC = segue.destination as! DetailRecipeViewController
+            detailRecipeVC.detailRecipe = detailRecipe
+        }
+    }
+   
+    
+    let segueIdentifier = "segueToDetail"
     let webService = SearchWebService()
     var ingredientsList: [String] = []
     var recipesList: EdamamRecipes?
+    var detailRecipe: [Hit] = []
     
     @IBOutlet weak var recipesTableView: UITableView!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
-    func getRecipes() {
+    private func getRecipes() {
+        toggleIndicator(shown: true)
         webService.getData(for: ingredientsList, callback: { (success, recipes) in
-            guard success, let recipes = recipes else {
-                return self.errorNetworkAlert()
+            self.toggleIndicator(shown: false)
+            DispatchQueue.main.async {
+                guard success, let recipes = recipes else {
+                    return self.errorNetworkAlert()
+                }
+                self.recipesList = recipes
+                self.recipesTableView.reloadData()
             }
-            self.recipesList = recipes
+            
         })
+    }
+    
+    private func toggleIndicator(shown: Bool) {
+        DispatchQueue.main.async {
+            self.activityIndicator.isHidden = !shown
+        }
+    }
+
+}
+
+extension RecipesListViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        detailRecipe = [recipesList!.hits[indexPath.row]]
+        self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
 }
@@ -47,8 +79,11 @@ extension RecipesListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath)
         
-        cell.textLabel?.text = "Just a moment, we're looking for recipes"
+        cell.textLabel?.text = recipesList?.hits[indexPath.row].recipe.label
         return cell
     }
     
+    
 }
+
+

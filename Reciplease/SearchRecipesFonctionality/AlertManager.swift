@@ -9,11 +9,17 @@
 import UIKit
 
 extension UIViewController {
-
-func errorNetworkAlert() {
-    let alertVC = UIAlertController(title: "Error", message: "An error occured, please retry.", preferredStyle: .alert)
-    alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
-    present(alertVC, animated: true, completion: nil)
-}
+    
+    func errorNetworkAlert() {
+        let alertVC = UIAlertController(title: "Network Error", message: "An error occured, please retry.", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "OK", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
+    
+    func emptyListAlert() {
+        let alertVC = UIAlertController(title: "Oopsi your list is empty", message: "Please give me some ingredients !", preferredStyle: .alert)
+        alertVC.addAction(UIAlertAction(title: "Got it", style: .cancel, handler: nil))
+        present(alertVC, animated: true, completion: nil)
+    }
 
 }

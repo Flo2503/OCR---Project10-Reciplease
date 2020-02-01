@@ -55,7 +55,12 @@ class SearchViewController: UIViewController {
     }
     
     @IBAction func searchRecipes(_ sender: Any) {
-        performSegue(withIdentifier: segueIdentifier, sender: self)
+        if !ingredientsList.isEmpty {
+            performSegue(withIdentifier: segueIdentifier, sender: self)
+        } else {
+            emptyListAlert()
+        }
+        
     }
     
     private func removeIngredient(at index: Int) {
