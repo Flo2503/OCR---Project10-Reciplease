@@ -12,13 +12,18 @@ class RecipesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
 
-        // Configure the view for the selected state
+    @IBOutlet weak var titleRecipesCell: UILabel!
+    @IBOutlet weak var subtitleRecipesCell: UILabel!
+    @IBOutlet weak var imageRecipesCell: UIImageView!
+    
+    func configure(image icon: String, title: String, subtitle: String) {
+        imageRecipesCell.image = UIImage(named: icon)
+        titleRecipesCell.text = title
+        subtitleRecipesCell.text = subtitle
     }
-
+    
+    
 }

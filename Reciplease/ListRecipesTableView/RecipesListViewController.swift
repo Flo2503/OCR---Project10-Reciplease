@@ -32,7 +32,9 @@ class RecipesListViewController: UIViewController {
     
     @IBOutlet weak var recipesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var labelRecipeCell: UILabel!
     
+    @IBOutlet weak var imageRecipeCell: UIImageView!
     
     private func getRecipes() {
         toggleIndicator(shown: true)
@@ -79,10 +81,11 @@ extension RecipesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath)
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as? RecipesTableViewCell else {
+            return UITableViewCell()
+        }
         
-        cell.textLabel?.text = recipesList?.hits[indexPath.row].recipe.label
-        cell.textLabel?.numberOfLines = 0
+        cell.configure(image: (recipesList?.hits[indexPath.row].recipe.image)!, title: (recipesList?.hits[indexPath.row].recipe.label)!, subtitle: (recipesList?.hits[indexPath.row].recipe.ingredientLines.joined(separator: ", "))!)
         
         return cell
     }
