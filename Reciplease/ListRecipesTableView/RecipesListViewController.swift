@@ -26,12 +26,13 @@ class RecipesListViewController: UIViewController {
     
     let segueIdentifier = "segueToDetail"
     let webService = SearchWebService()
-    var ingredientsList: [String] = []
     var recipesList: EdamamRecipes?
+    var ingredientsList: [String] = []
     var detailRecipe: [Hit] = []
     
     @IBOutlet weak var recipesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
+    
     
     private func getRecipes() {
         toggleIndicator(shown: true)
@@ -53,7 +54,8 @@ class RecipesListViewController: UIViewController {
             self.activityIndicator.isHidden = !shown
         }
     }
-
+    
+    
 }
 
 extension RecipesListViewController: UITableViewDelegate {
@@ -80,6 +82,7 @@ extension RecipesListViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath)
         
         cell.textLabel?.text = recipesList?.hits[indexPath.row].recipe.label
+        cell.textLabel?.numberOfLines = 0
         
         return cell
     }

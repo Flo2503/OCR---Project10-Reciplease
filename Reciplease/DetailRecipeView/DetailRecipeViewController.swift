@@ -21,15 +21,14 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var imageRecipe: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var ingredientsDetail: UITableView!
+    @IBOutlet weak var getDirectionsButton: UIButton!
     
-     @IBAction func dismiss() {
-         dismiss(animated: true, completion: nil)
-     }
     
-    private func setUp() {
-        recipeName.text = detailRecipe[0].recipe.label
+    @IBAction func getDirectionsButton(_ sender: Any) {
+        
     }
-}
+    
+    }
 
 extension DetailRecipeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -46,10 +45,19 @@ extension DetailRecipeViewController: UITableViewDataSource {
         let ingredient = detailRecipe[0].recipe.ingredientLines[indexPath.row]
         
         cell.textLabel?.text = "- \(ingredient)"
+        cell.textLabel?.numberOfLines = 0
         
         return cell
     }
         
+}
+
+extension DetailRecipeViewController {
+    func setUp() {
+        recipeName.text = detailRecipe[0].recipe.label
+        getDirectionsButton.layer.cornerRadius = 20
+    }
+
 }
 
 
