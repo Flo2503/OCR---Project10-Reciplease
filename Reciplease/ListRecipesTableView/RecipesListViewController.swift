@@ -85,7 +85,7 @@ extension RecipesListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(image: (recipesList?.hits[indexPath.row].recipe.image)!, title: (recipesList?.hits[indexPath.row].recipe.label)!, subtitle: (recipesList?.hits[indexPath.row].recipe.ingredientLines.joined(separator: ", "))!)
+        cell.configure(image: "", title: (recipesList?.hits[indexPath.row].recipe.label)!, subtitle: (recipesList?.hits[indexPath.row].recipe.ingredientLines.joined(separator: ", "))!, likes: (recipesList?.hits[indexPath.row].recipe.yield)!, totaTime: (recipesList?.hits[indexPath.row].recipe.totalTime)!)
         
         return cell
     }

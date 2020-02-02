@@ -22,6 +22,9 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var ingredientsDetail: UITableView!
     @IBOutlet weak var getDirectionsButton: UIButton!
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var likesLabel: UILabel!
+    @IBOutlet weak var totalTimeLabel: UILabel!
     
     
     @IBAction func getDirectionsButton(_ sender: Any) {
@@ -56,6 +59,11 @@ extension DetailRecipeViewController {
     func setUp() {
         recipeName.text = detailRecipe[0].recipe.label
         getDirectionsButton.layer.cornerRadius = 20
+        self.infoView.layer.cornerRadius = 7
+        self.infoView.layer.borderWidth = 2
+        self.infoView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        likesLabel.text = "\(String(detailRecipe[0].recipe.yield))" + " " + "👍🏻"
+        totalTimeLabel.text = "\(String(detailRecipe[0].recipe.totalTime))m" + " " + "⏲️"
     }
 
 }

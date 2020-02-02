@@ -12,18 +12,29 @@ class RecipesTableViewCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
+        setUp()
     }
 
 
+    @IBOutlet weak var infoView: UIView!
+    @IBOutlet weak var totalTimeRecipesCell: UILabel!
+    @IBOutlet weak var likesRecipesCell: UILabel!
     @IBOutlet weak var titleRecipesCell: UILabel!
     @IBOutlet weak var subtitleRecipesCell: UILabel!
     @IBOutlet weak var imageRecipesCell: UIImageView!
     
-    func configure(image icon: String, title: String, subtitle: String) {
+    func configure(image icon: String, title: String, subtitle: String, likes: Int, totaTime: Int) {
         imageRecipesCell.image = UIImage(named: icon)
         titleRecipesCell.text = title
         subtitleRecipesCell.text = subtitle
+        totalTimeRecipesCell.text = "\(String(totaTime))m" + " " + "⏲️"
+        likesRecipesCell.text = "\(String(likes))" + " " + "👍🏻"
     }
-    
+     
+    private func setUp() {
+        self.infoView.layer.cornerRadius = 7
+        self.infoView.layer.borderWidth = 2
+        self.infoView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+    }
     
 }
