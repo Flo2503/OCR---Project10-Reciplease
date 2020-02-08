@@ -27,11 +27,18 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var totalTimeLabel: UILabel!
     
     
+    
     @IBAction func getDirectionsButton(_ sender: Any) {
-        
+        let currentRecipeUrl = detailRecipe[0].recipe.url
+        guard let url = URL(string: currentRecipeUrl) else { return }
+        UIApplication.shared.open(url) // Open recipe directions in Safari
     }
     
+    @objc func tapButton() {
     }
+    
+    
+}
 
 extension DetailRecipeViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -57,6 +64,8 @@ extension DetailRecipeViewController: UITableViewDataSource {
 
 extension DetailRecipeViewController {
     func setUp() {
+        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(tapButton))
+        self.navigationItem.rightBarButtonItem = addButton
         recipeName.text = detailRecipe[0].recipe.label
         getDirectionsButton.layer.cornerRadius = 20
         self.infoView.layer.cornerRadius = 7
@@ -67,6 +76,8 @@ extension DetailRecipeViewController {
     }
 
 }
+
+
 
 
 

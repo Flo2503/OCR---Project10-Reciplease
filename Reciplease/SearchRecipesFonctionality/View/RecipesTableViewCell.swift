@@ -24,7 +24,6 @@ class RecipesTableViewCell: UITableViewCell {
     @IBOutlet weak var imageRecipesCell: UIImageView!
     
     func configure(image icon: String, title: String, subtitle: String, likes: Int, totaTime: Int) {
-        imageRecipesCell.image = UIImage(named: icon)
         titleRecipesCell.text = title
         subtitleRecipesCell.text = subtitle
         totalTimeRecipesCell.text = "\(String(totaTime))m" + " " + "⏲️"

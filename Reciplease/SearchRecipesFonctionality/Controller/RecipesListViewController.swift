@@ -25,7 +25,7 @@ class RecipesListViewController: UIViewController {
    
     
     let segueIdentifier = "segueToDetail"
-    let webService = SearchWebService()
+    let webService = WebService()
     var recipesList: EdamamRecipes?
     var ingredientsList: [String] = []
     var detailRecipe: [Hit] = []
@@ -56,7 +56,6 @@ class RecipesListViewController: UIViewController {
             self.activityIndicator.isHidden = !shown
         }
     }
-    
     
 }
 

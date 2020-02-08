@@ -22,7 +22,7 @@ class SearchViewController: UIViewController {
         }
     }
 
-    private let searchWebService = SearchWebService()
+    private let searchWebService = WebService()
     private let segueIdentifier = "segueToRecipes"
     var ingredientsList: [String] = []
     

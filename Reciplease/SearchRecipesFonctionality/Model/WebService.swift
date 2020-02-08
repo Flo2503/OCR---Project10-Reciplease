@@ -7,8 +7,9 @@
 //
 
 import Foundation
+import Alamofire
 
-class SearchWebService {
+class WebService {
 
     // MARK: - Properties, Instance, Init, URL endpoint
     private var recipesSession = URLSession(configuration: .default)
@@ -49,9 +50,9 @@ class SearchWebService {
 
         task?.resume()
     }
-
+    
     /// Url GET request. In parameter : array of ingredients.
-    func createRequest(ingredients: [String]) -> URLRequest {
+    private func createRequest(ingredients: [String]) -> URLRequest {
         var components = URLComponents()
         let stringIngredientsRepresentation = ingredients.joined(separator: ",")
         let queryItemApi = URLQueryItem(name: "app_key", value: apiManager.api)
@@ -66,4 +67,5 @@ class SearchWebService {
         return request
     }
     
+
 }
