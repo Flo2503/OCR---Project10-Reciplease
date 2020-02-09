@@ -26,7 +26,9 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var totalTimeLabel: UILabel!
     
-    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        <#code#>
+    }
     
     @IBAction func getDirectionsButton(_ sender: Any) {
         let currentRecipeUrl = detailRecipe[0].recipe.url

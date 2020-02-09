@@ -27,6 +27,7 @@
 		5C71E33223C670FB004B7118 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C71E33023C670FB004B7118 /* LaunchScreen.storyboard */; };
 		5C71E34A23C68047004B7118 /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E34923C68047004B7118 /* SearchViewController.swift */; };
 		5CBFBFDC23EF0D820095545D /* FavoriteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFBFDB23EF0D820095545D /* FavoriteViewController.swift */; };
+		5CBFBFE123EF2D440095545D /* FavoriteTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CBFBFE023EF2D440095545D /* FavoriteTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		5C71E33E23C670FB004B7118 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5C71E34923C68047004B7118 /* SearchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		5CBFBFDB23EF0D820095545D /* FavoriteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteViewController.swift; sourceTree = "<group>"; };
+		5CBFBFE023EF2D440095545D /* FavoriteTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteTableViewCell.swift; sourceTree = "<group>"; };
 		6AD68E67755CC129F5595BFD /* Pods_Reciplease.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Reciplease.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C04004734A8E2A6579AD40BA /* Pods-Reciplease.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.release.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,7 +202,7 @@
 		5CBFBFD823EF0D080095545D /* FavoriteRecipesFonctionality */ = {
 			isa = PBXGroup;
 			children = (
-				5CBFBFDD23EF0DC90095545D /* New Group */,
+				5CBFBFDE23EF0DD00095545D /* View */,
 				5CBFBFD923EF0D2A0095545D /* Controller */,
 			);
 			path = FavoriteRecipesFonctionality;
@@ -210,21 +212,14 @@
 			isa = PBXGroup;
 			children = (
 				5CBFBFDB23EF0D820095545D /* FavoriteViewController.swift */,
-				5CBFBFDE23EF0DD00095545D /* View */,
 			);
 			path = Controller;
-			sourceTree = "<group>";
-		};
-		5CBFBFDD23EF0DC90095545D /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 		5CBFBFDE23EF0DD00095545D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				5CBFBFE023EF2D440095545D /* FavoriteTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -400,6 +395,7 @@
 				5C71E34A23C68047004B7118 /* SearchViewController.swift in Sources */,
 				5C24C68C23CFB194004ED8D9 /* RecipesListViewController.swift in Sources */,
 				5C4AB19223CBB5F2007CC952 /* ApiManager.swift in Sources */,
+				5CBFBFE123EF2D440095545D /* FavoriteTableViewCell.swift in Sources */,
 				5C71E32523C670F9004B7118 /* SceneDelegate.swift in Sources */,
 				5C4AB19023CB756D007CC952 /* Recipes.swift in Sources */,
 				5C24C69023D2062D004ED8D9 /* AlertManager.swift in Sources */,
