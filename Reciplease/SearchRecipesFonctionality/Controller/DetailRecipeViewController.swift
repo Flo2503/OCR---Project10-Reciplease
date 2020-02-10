@@ -17,8 +17,13 @@ class DetailRecipeViewController: UIViewController {
         setUp()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        getRecipeImage()
+    }
+    
     var detailRecipe: [Hit] = []
-    let favoriteView = FavoriteViewController()
+    private let webService = WebService()
+    private let defaultImage = "defaultImage"
     
     @IBOutlet weak var imageRecipe: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
@@ -36,10 +41,8 @@ class DetailRecipeViewController: UIViewController {
     }
     
     @objc func tapButton() {
-        let recipeToAdd = detailRecipe[0]
-        favoriteView.favorites.insert(recipeToAdd, at: 0)
-        print(favoriteView.favorites.count)
     }
+    
 }
 
 extension DetailRecipeViewController: UITableViewDataSource {
@@ -62,7 +65,21 @@ extension DetailRecipeViewController: UITableViewDataSource {
         return cell
     }
     
+    
         
+}
+
+extension DetailRecipeViewController {
+     func getRecipeImage() {
+        webService.getImage(url: (detailRecipe[0].recipe.image), callback: { (image) in
+            DispatchQueue.main.async {
+                guard let image = image else {
+                    return self.imageRecipe.image = UIImage(named: self.defaultImage)
+                }
+                self.imageRecipe.image = image
+            }
+        })
+    }
 }
 
 extension DetailRecipeViewController {

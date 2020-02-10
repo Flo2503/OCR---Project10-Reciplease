@@ -23,11 +23,15 @@ class RecipesTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleRecipesCell: UILabel!
     @IBOutlet weak var imageRecipesCell: UIImageView!
     
-    func configure(image icon: String, title: String, subtitle: String, likes: Int, totaTime: Int) {
+    func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleRecipesCell.text = title
         subtitleRecipesCell.text = subtitle
         totalTimeRecipesCell.text = "\(String(totaTime))m" + " " + "⏲️"
         likesRecipesCell.text = "\(String(likes))" + " " + "👍🏻"
+    }
+    
+    func configureImage(image: UIImage) {
+        imageRecipesCell.image = image
     }
      
     private func setUp() {

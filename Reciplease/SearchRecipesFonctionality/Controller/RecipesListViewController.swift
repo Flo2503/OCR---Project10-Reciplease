@@ -24,7 +24,8 @@ class RecipesListViewController: UIViewController {
     }
    
     
-    let segueIdentifier = "segueToDetail"
+    private let segueIdentifier = "segueToDetail"
+    private let defaultImage = "defaultImage"
     let webService = WebService()
     var recipesList: EdamamRecipes?
     var ingredientsList: [String] = []
@@ -50,6 +51,8 @@ class RecipesListViewController: UIViewController {
             
         })
     }
+    
+    
     
     private func toggleIndicator(shown: Bool) {
         DispatchQueue.main.async {
@@ -84,7 +87,16 @@ extension RecipesListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        cell.configure(image: "", title: (recipesList?.hits[indexPath.row].recipe.label)!, subtitle: (recipesList?.hits[indexPath.row].recipe.ingredientLines.joined(separator: ", "))!, likes: (recipesList?.hits[indexPath.row].recipe.yield)!, totaTime: (recipesList?.hits[indexPath.row].recipe.totalTime)!)
+        webService.getImage(url: (recipesList?.hits[indexPath.row].recipe.image)!, callback: { (image) in
+            DispatchQueue.main.async {
+                guard let image = image else {
+                    return cell.configureImage(image: UIImage(named: self.defaultImage)!)
+                }
+                cell.configureImage(image: image)
+            }
+        })
+        
+        cell.configure(title: (recipesList?.hits[indexPath.row].recipe.label)!, subtitle: (recipesList?.hits[indexPath.row].recipe.ingredientLines.joined(separator: ", "))!, likes: (recipesList?.hits[indexPath.row].recipe.yield)!, totaTime: (recipesList?.hits[indexPath.row].recipe.totalTime)!)
         
         return cell
     }

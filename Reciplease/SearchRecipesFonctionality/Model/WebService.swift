@@ -30,4 +30,13 @@ class WebService {
             }
         }
     }
+    
+    func getImage(url: String, callback: @escaping ((UIImage?) -> Void)) {
+        AF.download(url).responseData { response in
+            if let data = response.value {
+                let image = UIImage(data: data)
+                callback(image)
+            }
+        }
+    }
 }
