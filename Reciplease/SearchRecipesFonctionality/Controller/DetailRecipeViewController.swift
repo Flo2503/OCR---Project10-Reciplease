@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Alamofire
 
 class DetailRecipeViewController: UIViewController {
 
@@ -17,6 +18,7 @@ class DetailRecipeViewController: UIViewController {
     }
     
     var detailRecipe: [Hit] = []
+    let favoriteView = FavoriteViewController()
     
     @IBOutlet weak var imageRecipe: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
@@ -26,20 +28,18 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var totalTimeLabel: UILabel!
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        <#code#>
-    }
-    
+   
     @IBAction func getDirectionsButton(_ sender: Any) {
         let currentRecipeUrl = detailRecipe[0].recipe.url
         guard let url = URL(string: currentRecipeUrl) else { return }
-        UIApplication.shared.open(url) // Open recipe directions in Safari
+        UIApplication.shared.open(url)
     }
     
     @objc func tapButton() {
+        let recipeToAdd = detailRecipe[0]
+        favoriteView.favorites.insert(recipeToAdd, at: 0)
+        print(favoriteView.favorites.count)
     }
-    
-    
 }
 
 extension DetailRecipeViewController: UITableViewDataSource {
@@ -61,6 +61,7 @@ extension DetailRecipeViewController: UITableViewDataSource {
         
         return cell
     }
+    
         
 }
 

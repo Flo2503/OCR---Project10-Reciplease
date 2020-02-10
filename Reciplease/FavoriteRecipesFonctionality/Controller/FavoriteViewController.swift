@@ -18,7 +18,7 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteTableView: UITableView!
     
         
-    var detailRecipe: [Hit] = []
+    var favorites: [Hit] = []
 }
 
 extension FavoriteViewController: UITableViewDataSource {
@@ -27,15 +27,13 @@ extension FavoriteViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return detailRecipe.count
+        return favorites.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as? FavoriteTableViewCell else {
             return UITableViewCell()
         }
-        
-        cell.configure(image: "", title: (detailRecipe[indexPath.row].recipe.label), subtitle: (detailRecipe[indexPath.row].recipe.ingredientLines.joined(separator: ", ")), likes: (detailRecipe[indexPath.row].recipe.yield), totaTime: (detailRecipe[indexPath.row].recipe.totalTime))
         
         return cell
     }
