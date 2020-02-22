@@ -11,18 +11,8 @@ import Alamofire
 
 class DetailRecipeViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        ingredientsDetail.reloadData()
-        setUp()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        getRecipeImage()
-    }
-    
     var detailRecipe: [Hit] = []
-    private let webService = WebService()
+    private let webService = EdanamWebService()
     private let defaultImage = "defaultImage"
     
     @IBOutlet weak var imageRecipe: UIImageView!
@@ -38,6 +28,16 @@ class DetailRecipeViewController: UIViewController {
         let currentRecipeUrl = detailRecipe[0].recipe.url
         guard let url = URL(string: currentRecipeUrl) else { return }
         UIApplication.shared.open(url)
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        ingredientsDetail.reloadData()
+        setUp()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        getRecipeImage()
     }
     
     @objc func tapButton() {
@@ -96,6 +96,8 @@ extension DetailRecipeViewController {
     }
 
 }
+
+
 
 
 

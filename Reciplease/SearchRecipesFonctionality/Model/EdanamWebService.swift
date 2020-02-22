@@ -9,10 +9,9 @@
 import Foundation
 import Alamofire
 
-class WebService {
-
-    private let apiManager = ApiManager()
+class EdanamWebService {
     
+    private let apiManager = ApiManager()
     
     func getData(for ingredients: [String], callback: @escaping (Bool, EdamamRecipes?) -> Void) {
         let stringIngredientsRepresentation = ingredients.joined(separator: ",")
@@ -30,8 +29,9 @@ class WebService {
             }
         }
     }
-    
-    func getImage(url: String, callback: @escaping ((UIImage?) -> Void)) {
+        
+        
+   func getImage(url: String, callback: @escaping ((UIImage?) -> Void)) {
         AF.download(url).responseData { response in
             if let data = response.value {
                 let image = UIImage(data: data)
@@ -39,4 +39,5 @@ class WebService {
             }
         }
     }
+        
 }

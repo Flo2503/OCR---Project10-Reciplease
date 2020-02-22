@@ -22,10 +22,9 @@ class SearchViewController: UIViewController {
         }
     }
 
-    private let searchWebService = WebService()
+    private let searchWebService = EdanamWebService()
     private let segueIdentifier = "segueToRecipes"
     var ingredientsList: [String] = []
-    
     
     
     @IBOutlet weak var clearButton: UIButton!
@@ -60,7 +59,6 @@ class SearchViewController: UIViewController {
         } else {
             emptyListAlert()
         }
-        
     }
     
     private func removeIngredient(at index: Int) {
@@ -69,6 +67,12 @@ class SearchViewController: UIViewController {
     
     private func add(ingredient: String) {
         ingredientsList.append(ingredient)
+    }
+    
+    private func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        addIngredient(self)
+        return true
     }
     
 }

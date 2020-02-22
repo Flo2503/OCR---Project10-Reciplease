@@ -1,4 +1,20 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19D76" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="IngredientEntity" representedClassName=".IngredientEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <relationship name="recipe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RecipeEntity" inverseName="ingredients" inverseEntity="RecipeEntity"/>
+    </entity>
+    <entity name="RecipeEntity" representedClassName=".RecipeEntity" syncable="YES" codeGenerationType="category">
+        <attribute name="image" optional="YES" attributeType="String"/>
+        <attribute name="ingredientLines" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="totalTime" optional="YES" attributeType="String"/>
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <attribute name="yield" optional="YES" attributeType="String"/>
+        <relationship name="ingredients" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="IngredientEntity" inverseName="recipe" inverseEntity="IngredientEntity"/>
+    </entity>
+    <elements>
+        <element name="IngredientEntity" positionX="-63" positionY="27" width="128" height="73"/>
+        <element name="RecipeEntity" positionX="-63" positionY="-18" width="128" height="148"/>
+    </elements>
 </model>

@@ -26,8 +26,8 @@ class RecipesListViewController: UIViewController {
     
     private let segueIdentifier = "segueToDetail"
     private let defaultImage = "defaultImage"
-    let webService = WebService()
-    var recipesList: EdamamRecipes?
+    let webService = EdanamWebService()
+    var currentRecipe: EdamamRecipes?
     var ingredientsList: [String] = []
     var detailRecipe: [Hit] = []
     
@@ -45,7 +45,7 @@ class RecipesListViewController: UIViewController {
                 guard success, let recipes = recipes else {
                     return self.errorNetworkAlert()
                 }
-                self.recipesList = recipes
+                self.currentRecipe = recipes
                 self.recipesTableView.reloadData()
             }
             
@@ -64,7 +64,7 @@ class RecipesListViewController: UIViewController {
 
 extension RecipesListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        detailRecipe = [recipesList!.hits[indexPath.row]]
+        detailRecipe = [currentRecipe!.hits[indexPath.row]]
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
@@ -76,7 +76,7 @@ extension RecipesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let recipes = recipesList?.hits else {
+        guard let recipes = currentRecipe?.hits else {
             return 0
         }
         return recipes.count
@@ -87,7 +87,7 @@ extension RecipesListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        webService.getImage(url: (recipesList?.hits[indexPath.row].recipe.image)!, callback: { (image) in
+        webService.getImage(url: (currentRecipe?.hits[indexPath.row].recipe.image)!, callback: { (image) in
             DispatchQueue.main.async {
                 guard let image = image else {
                     return cell.configureImage(image: UIImage(named: self.defaultImage)!)
@@ -96,7 +96,7 @@ extension RecipesListViewController: UITableViewDataSource {
             }
         })
         
-        cell.configure(title: (recipesList?.hits[indexPath.row].recipe.label)!, subtitle: (recipesList?.hits[indexPath.row].recipe.ingredientLines.joined(separator: ", "))!, likes: (recipesList?.hits[indexPath.row].recipe.yield)!, totaTime: (recipesList?.hits[indexPath.row].recipe.totalTime)!)
+        cell.configure(title: (currentRecipe?.hits[indexPath.row].recipe.label)!, subtitle: (currentRecipe?.hits[indexPath.row].recipe.ingredientLines.joined(separator: ", "))!, likes: (currentRecipe?.hits[indexPath.row].recipe.yield)!, totaTime: (currentRecipe?.hits[indexPath.row].recipe.totalTime)!)
         
         return cell
     }

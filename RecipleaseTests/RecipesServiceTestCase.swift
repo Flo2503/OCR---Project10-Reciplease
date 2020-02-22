@@ -12,7 +12,7 @@ import XCTest
 class RecipesServiceTestCase: XCTestCase {
     
     func testGetRecipeShouldPostFailedCallbackIfError() {
-        let recipesService = WebService(recipesSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
+        let recipesService = EdanamWebService(recipesSession: URLSessionFake(data: nil, response: nil, error: FakeResponseData.error))
 
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
@@ -26,7 +26,7 @@ class RecipesServiceTestCase: XCTestCase {
     }
 
     func testGetRecipeShouldPostFailedCallbackIfNoData() {
-        let recipesService = WebService(recipesSession: URLSessionFake(data: nil, response: nil, error: nil))
+        let recipesService = EdanamWebService(recipesSession: URLSessionFake(data: nil, response: nil, error: nil))
 
         let expectation = XCTestExpectation(description: "Wait for queue change.")
 
@@ -40,7 +40,7 @@ class RecipesServiceTestCase: XCTestCase {
     }
 
     func testGetRecipeShouldPostFailedCallbackIfIncorrectResponse() {
-        let recipesService = WebService(recipesSession: URLSessionFake(
+        let recipesService = EdanamWebService(recipesSession: URLSessionFake(
             data: FakeResponseData.recipesCorrectData,
             response: FakeResponseData.responseKO,
             error: nil
@@ -58,7 +58,7 @@ class RecipesServiceTestCase: XCTestCase {
     }
 
     func testGetRecipeShouldPostFailedCallbackIfIncorrectData() {
-        let recipesService = WebService(recipesSession: URLSessionFake(
+        let recipesService = EdanamWebService(recipesSession: URLSessionFake(
             data: FakeResponseData.incorrectData,
             response: FakeResponseData.responseOK,
             error: nil
@@ -76,7 +76,7 @@ class RecipesServiceTestCase: XCTestCase {
     }
 
     func testGetRecipeShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
-        let recipesService = WebService(recipesSession: URLSessionFake(
+        let recipesService = EdanamWebService(recipesSession: URLSessionFake(
             data: FakeResponseData.recipesCorrectData, response: FakeResponseData.responseOK, error: nil)
         )
 

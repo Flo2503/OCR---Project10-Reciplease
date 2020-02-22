@@ -15,7 +15,6 @@ class FavoriteTableViewCell: UITableViewCell {
         setUp()
     }
 
-
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var totalTimeFavoriteCell: UILabel!
     @IBOutlet weak var likesFavoriteCell: UILabel!
@@ -23,11 +22,15 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleFavoriteCell: UILabel!
     @IBOutlet weak var imageFavoriteCell: UIImageView!
     
-    func configure(image icon: String, title: String, subtitle: String, likes: Int, totaTime: Int) {
+    func configure(title: String, subtitle: String, likes: String, totaTime: String) {
         titleFavoriteCell.text = title
         subtitleFavoriteCell.text = subtitle
         totalTimeFavoriteCell.text = "\(String(totaTime))m" + " " + "⏲️"
         likesFavoriteCell.text = "\(String(likes))" + " " + "👍🏻"
+    }
+    
+    func configureImage(image: UIImage) {
+        imageFavoriteCell.image = image
     }
      
     private func setUp() {
