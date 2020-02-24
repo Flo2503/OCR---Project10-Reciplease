@@ -11,25 +11,25 @@ import CoreData
 
 class RecipeEntity: NSManagedObject {
     
-    static func fetchAll(viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [RecipeEntity] {
+    static func fetchAll(viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [Recipes] {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         guard let favoriteRecipes = try? viewContext.fetch(request) else { return [] }
-        return favoriteRecipes
+        var recipes = [Recipes]()
+        for favorite in favoriteRecipes {
+            let recipe = Recipes(label: favorite.name!, image: favorite.image!, url: favorite.url!, yield: Int(favorite.yield), ingredientLines: (favorite.ingredientLines?.split(separator: ",").map{String($0)})!, totalTime: Int(favorite.totalTime))
+            recipes.append(recipe)
+        }
+        return recipes
     }
     
-     func addRecipeToFavorite(recipeDetail: Recipes, viewContext: NSManagedObjectContext = AppDelegate.viewContext) {
+     func addRecipeToFavorite(recipes: Recipes, viewContext: NSManagedObjectContext = AppDelegate.viewContext) {
         let favoriteRecipe = RecipeEntity(context: viewContext)
-        favoriteRecipe.name = recipeDetail.label
-        favoriteRecipe.totalTime = String(recipeDetail.totalTime)
-        favoriteRecipe.yield = String(recipeDetail.yield)
-        favoriteRecipe.url = recipeDetail.url
-        favoriteRecipe.image = recipeDetail.image
-        
-        for ingredient in recipeDetail.ingredientLines {
-            let ingredientEntity = IngredientEntity(context: viewContext)
-            ingredientEntity.name = ingredient
-            ingredientEntity.recipe = favoriteRecipe
-        }
+        favoriteRecipe.name = recipes.label
+        favoriteRecipe.totalTime = Int64(recipes.totalTime)
+        favoriteRecipe.yield = Int64(recipes.yield)
+        favoriteRecipe.url = recipes.url
+        favoriteRecipe.image = recipes.image
+        favoriteRecipe.ingredientLines = recipes.ingredientLines.joined(separator: ",")
         
         try? viewContext.save()
     }

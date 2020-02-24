@@ -9,19 +9,7 @@
 import UIKit
 
 class SearchViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.cornerRadius()
-    }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == segueIdentifier {
-            let recipesVC = segue.destination as! RecipesListViewController
-            recipesVC.ingredientsList = ingredientsList
-        }
-    }
-
     private let searchWebService = EdanamWebService()
     private let segueIdentifier = "segueToRecipes"
     var ingredientsList: [String] = []
@@ -33,7 +21,6 @@ class SearchViewController: UIViewController {
     @IBOutlet weak var addIngredientTextField: UITextField!
     @IBOutlet weak var ingredientsTableView: UITableView!
     
-    
     @IBAction func addIngredient(_ sender: Any) {
         guard let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty else {
             return
@@ -42,7 +29,6 @@ class SearchViewController: UIViewController {
         ingredientsTableView.reloadData()
         addIngredientTextField.text = ""
     }
-    
     
     @IBAction func dismissKeyboard(_ sender: Any) {
         addIngredientTextField.resignFirstResponder()
@@ -58,6 +44,18 @@ class SearchViewController: UIViewController {
             performSegue(withIdentifier: segueIdentifier, sender: self)
         } else {
             emptyListAlert()
+        }
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.cornerRadius()
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let recipesVC = segue.destination as! RecipesListViewController
+            recipesVC.ingredientsList = ingredientsList
         }
     }
     

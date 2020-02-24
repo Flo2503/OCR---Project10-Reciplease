@@ -22,7 +22,7 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleFavoriteCell: UILabel!
     @IBOutlet weak var imageFavoriteCell: UIImageView!
     
-    func configure(title: String, subtitle: String, likes: String, totaTime: String) {
+    func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleFavoriteCell.text = title
         subtitleFavoriteCell.text = subtitle
         totalTimeFavoriteCell.text = "\(String(totaTime))m" + " " + "⏲️"

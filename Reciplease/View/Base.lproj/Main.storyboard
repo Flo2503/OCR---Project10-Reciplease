@@ -376,16 +376,16 @@
                                                     <rect key="frame" x="336" y="11" width="65" height="45"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fia-df-UXd">
-                                                            <rect key="frame" x="1" y="1" width="61" height="20"/>
+                                                            <rect key="frame" x="1" y="1" width="33" height="20"/>
                                                             <constraints>
-                                                                <constraint firstAttribute="height" constant="20" id="nzJ-VC-tQo"/>
+                                                                <constraint firstAttribute="height" constant="20" id="fqR-0G-GvY"/>
                                                             </constraints>
                                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jZM-dO-gRS">
-                                                            <rect key="frame" x="1" y="24" width="61" height="20"/>
+                                                            <rect key="frame" x="1" y="24" width="33" height="20"/>
                                                             <constraints>
                                                                 <constraint firstAttribute="height" constant="20" id="7f2-ge-fTt"/>
                                                             </constraints>
@@ -393,17 +393,26 @@
                                                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_timer" translatesAutoresizingMaskIntoConstraints="NO" id="dKd-7m-1GL">
+                                                            <rect key="frame" x="41" y="25" width="22" height="18"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </imageView>
+                                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_like" translatesAutoresizingMaskIntoConstraints="NO" id="HGe-Yd-dCu">
+                                                            <rect key="frame" x="41" y="1" width="23" height="19"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                        </imageView>
                                                     </subviews>
                                                     <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="jZM-dO-gRS" secondAttribute="bottom" constant="1" id="1D3-S2-0bG"/>
-                                                        <constraint firstAttribute="trailing" secondItem="fia-df-UXd" secondAttribute="trailing" constant="3" id="2D5-54-fwB"/>
-                                                        <constraint firstItem="fia-df-UXd" firstAttribute="leading" secondItem="OOb-eE-JRV" secondAttribute="leading" constant="1" id="IFB-Ay-nGo"/>
-                                                        <constraint firstItem="fia-df-UXd" firstAttribute="top" secondItem="OOb-eE-JRV" secondAttribute="top" constant="1" id="TEb-aN-mhX"/>
+                                                        <constraint firstItem="fia-df-UXd" firstAttribute="leading" secondItem="OOb-eE-JRV" secondAttribute="leading" constant="1" id="JB0-iL-Ubv"/>
+                                                        <constraint firstItem="fia-df-UXd" firstAttribute="top" secondItem="OOb-eE-JRV" secondAttribute="top" constant="1" id="V87-qO-8os"/>
                                                         <constraint firstAttribute="width" constant="65" id="a7C-cJ-qST"/>
                                                         <constraint firstAttribute="width" secondItem="OOb-eE-JRV" secondAttribute="height" multiplier="13:9" id="b1q-6D-nlc"/>
+                                                        <constraint firstItem="jZM-dO-gRS" firstAttribute="top" secondItem="fia-df-UXd" secondAttribute="bottom" constant="3" id="d8y-Re-7bK"/>
                                                         <constraint firstItem="jZM-dO-gRS" firstAttribute="leading" secondItem="OOb-eE-JRV" secondAttribute="leading" constant="1" id="fmn-mp-Bfu"/>
-                                                        <constraint firstAttribute="trailing" secondItem="jZM-dO-gRS" secondAttribute="trailing" constant="3" id="zUJ-dg-Ziy"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
@@ -586,7 +595,14 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="oyb-Id-8Q7"/>
                     </view>
-                    <navigationItem key="navigationItem" id="FZT-bR-AVk"/>
+                    <navigationItem key="navigationItem" id="FZT-bR-AVk">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="tQu-5t-Hd4">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="favoriteButton:" destination="UBs-sO-14G" id="dHE-9w-cy0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="getDirectionsButton" destination="UY4-in-KEs" id="HqX-Bu-c7T"/>
                         <outlet property="imageRecipe" destination="zbu-eq-nIo" id="EQR-xk-axj"/>
@@ -594,6 +610,7 @@
                         <outlet property="ingredientsDetail" destination="PWh-rU-luM" id="5jq-zR-sYx"/>
                         <outlet property="likesLabel" destination="Cxa-dQ-R16" id="yys-Ua-ELp"/>
                         <outlet property="recipeName" destination="7eQ-fo-vsm" id="Pnc-pA-Bql"/>
+                        <outlet property="tapFavoriteButton" destination="FZT-bR-AVk" id="lDX-K7-oXP"/>
                         <outlet property="totalTimeLabel" destination="kGu-Hg-yYK" id="D1u-JT-48y"/>
                     </connections>
                 </viewController>
@@ -603,6 +620,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_like" width="64" height="64"/>
+        <image name="icon_timer" width="64" height="64"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
 </document>

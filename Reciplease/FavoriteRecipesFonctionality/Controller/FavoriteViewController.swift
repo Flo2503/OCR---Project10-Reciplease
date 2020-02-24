@@ -9,11 +9,13 @@
 import UIKit
 
 class FavoriteViewController: UIViewController {
-
-    @IBOutlet weak var favoriteTableView: UITableView!
+    
     private var favoriteRecipes = RecipeEntity.fetchAll()
     private let webService = EdanamWebService()
+    private let defaultImage = "defaultImage"
 
+    @IBOutlet weak var favoriteTableView: UITableView!
+    
     override func viewWillAppear(_ animated: Bool) {
         favoriteRecipes = RecipeEntity.fetchAll()
         favoriteTableView.reloadData()
@@ -21,13 +23,6 @@ class FavoriteViewController: UIViewController {
 }
 
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-           if editingStyle == .delete {
-            favoriteRecipes[indexPath.row].delete()
-               tableView.deleteRows(at: [indexPath], with: .automatic)
-           }
-    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -42,7 +37,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        webService.getImage(url: (favoriteRecipes[indexPath.row].url)!, callback: { (image) in
+        webService.getImage(url: (favoriteRecipes[indexPath.row].url), callback: { (image) in
             DispatchQueue.main.async {
                 guard let image = image else {
                     return 
@@ -51,7 +46,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             }
         })
 
-        cell.configure(title: favoriteRecipes[indexPath.row].name!, subtitle: favoriteRecipes[indexPath.row].name!, likes: favoriteRecipes[indexPath.row].yield!, totaTime: favoriteRecipes[indexPath.row].totalTime!)
+        cell.configure(title: favoriteRecipes[indexPath.row].label, subtitle: favoriteRecipes[indexPath.row].ingredientLines.joined(separator: ", "), likes: favoriteRecipes[indexPath.row].yield, totaTime: favoriteRecipes[indexPath.row].totalTime)
         
         return cell
     }

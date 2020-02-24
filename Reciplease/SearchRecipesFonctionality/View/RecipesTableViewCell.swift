@@ -26,8 +26,8 @@ class RecipesTableViewCell: UITableViewCell {
     func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleRecipesCell.text = title
         subtitleRecipesCell.text = subtitle
-        totalTimeRecipesCell.text = "\(String(totaTime))m" + " " + "⏲️"
-        likesRecipesCell.text = "\(String(likes))" + " " + "👍🏻"
+        totalTimeRecipesCell.text = "\(String(totaTime))m"
+        likesRecipesCell.text = "\(String(likes))"
     }
     
     func configureImage(image: UIImage) {

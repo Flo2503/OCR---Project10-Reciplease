@@ -13,7 +13,7 @@ class EdanamWebService {
     
     private let apiManager = ApiManager()
     
-    func getData(for ingredients: [String], callback: @escaping (Bool, EdamamRecipes?) -> Void) {
+    func getData(for ingredients: [String], callback: @escaping (Bool, [Recipes]?) -> Void) {
         let stringIngredientsRepresentation = ingredients.joined(separator: ",")
         let param = ["app_key": apiManager.api, "app_id": apiManager.appId, "q": stringIngredientsRepresentation]
         AF.request("https://api.edamam.com/search", method: .get, parameters: param).validate().responseJSON { response in
@@ -22,7 +22,11 @@ class EdanamWebService {
             }
             do {
                 let decoder = JSONDecoder()
-                let recipes = try decoder.decode(EdamamRecipes.self, from: data)
+                let edamamRecipes = try decoder.decode(EdamamRecipes.self, from: data)
+                var recipes = [Recipes]()
+                for hit in edamamRecipes.hits {
+                    recipes.append(hit.recipe)
+                }
                 callback(true, recipes)
             } catch {
                 callback(false, nil)
