@@ -172,6 +172,7 @@
                     <navigationItem key="navigationItem" id="2oQ-xh-nUX"/>
                     <connections>
                         <outlet property="favoriteTableView" destination="7Jx-ZN-cCm" id="Al7-2L-fN9"/>
+                        <segue destination="UBs-sO-14G" kind="show" identifier="segueFromFavToDetail" id="5oh-8w-Icn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="aFc-Sp-f3c" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -624,4 +625,7 @@
         <image name="icon_timer" width="64" height="64"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="5oh-8w-Icn"/>
+    </inferredMetricsTieBreakers>
 </document>

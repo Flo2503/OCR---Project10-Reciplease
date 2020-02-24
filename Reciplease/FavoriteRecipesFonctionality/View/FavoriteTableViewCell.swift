@@ -25,12 +25,13 @@ class FavoriteTableViewCell: UITableViewCell {
     func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleFavoriteCell.text = title
         subtitleFavoriteCell.text = subtitle
-        totalTimeFavoriteCell.text = "\(String(totaTime))m" + " " + "⏲️"
-        likesFavoriteCell.text = "\(String(likes))" + " " + "👍🏻"
+        totalTimeFavoriteCell.text = "\(String(totaTime))m"
+        likesFavoriteCell.text = "\(String(likes))"
     }
     
     func configureImage(image: UIImage) {
         imageFavoriteCell.image = image
+        
     }
      
     private func setUp() {

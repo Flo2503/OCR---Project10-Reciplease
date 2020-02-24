@@ -58,6 +58,7 @@ class RecipesListViewController: UIViewController {
 }
 
 extension RecipesListViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         detailRecipe = currentRecipes![indexPath.row]
         self.performSegue(withIdentifier: segueIdentifier, sender: self)

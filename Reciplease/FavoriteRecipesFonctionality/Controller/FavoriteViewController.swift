@@ -13,6 +13,8 @@ class FavoriteViewController: UIViewController {
     private var favoriteRecipes = RecipeEntity.fetchAll()
     private let webService = EdanamWebService()
     private let defaultImage = "defaultImage"
+    private let segueIdentifier = "segueFromFavToDetail"
+    var detailRecipe: Recipes?
 
     @IBOutlet weak var favoriteTableView: UITableView!
     
@@ -20,9 +22,21 @@ class FavoriteViewController: UIViewController {
         favoriteRecipes = RecipeEntity.fetchAll()
         favoriteTableView.reloadData()
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == segueIdentifier {
+            let detailRecipeVC = segue.destination as! DetailRecipeViewController
+            detailRecipeVC.detailRecipe = detailRecipe
+        }
+    }
 }
 
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        detailRecipe = favoriteRecipes[indexPath.row]
+        self.performSegue(withIdentifier: segueIdentifier, sender: self)
+    }
     
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
@@ -37,10 +51,10 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
         
-        webService.getImage(url: (favoriteRecipes[indexPath.row].url), callback: { (image) in
+        webService.getImage(url: (favoriteRecipes[indexPath.row].image), callback: { (image) in
             DispatchQueue.main.async {
                 guard let image = image else {
-                    return 
+                    return cell.configureImage(image: UIImage(named: self.defaultImage)!)
                 }
                 cell.configureImage(image: image)
             }
