@@ -10,7 +10,7 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     
-    private var favoriteRecipes = RecipeEntity.fetchAll()
+    private var favoriteRecipes: [Recipes] = []
     private let webService = EdanamWebService()
     private let defaultImage = "defaultImage"
     private let segueIdentifier = "segueFromFavToDetail"

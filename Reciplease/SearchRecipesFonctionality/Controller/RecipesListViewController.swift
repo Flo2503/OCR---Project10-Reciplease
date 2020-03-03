@@ -14,7 +14,7 @@ class RecipesListViewController: UIViewController {
     private let segueIdentifier = "segueToDetail"
     private let defaultImage = "defaultImage"
     private let webService = EdanamWebService()
-    var currentRecipes: [Recipes]?
+    var currentRecipes: [Recipes] = []
     var detailRecipe: Recipes?
     var ingredientsList: [String] = []
     
@@ -60,7 +60,7 @@ class RecipesListViewController: UIViewController {
 extension RecipesListViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        detailRecipe = currentRecipes![indexPath.row]
+        detailRecipe = currentRecipes[indexPath.row]
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
     
@@ -72,10 +72,7 @@ extension RecipesListViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        guard let recipes = currentRecipes?.count else {
-            return 0
-        }
-        return recipes
+        currentRecipes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -83,7 +80,7 @@ extension RecipesListViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        webService.getImage(url: (currentRecipes![indexPath.row].image), callback: { (image) in
+        webService.getImage(url: (currentRecipes[indexPath.row].image), callback: { (image) in
             DispatchQueue.main.async {
                 guard let image = image else {
                     return cell.configureImage(image: UIImage(named: self.defaultImage)!)
@@ -92,7 +89,7 @@ extension RecipesListViewController: UITableViewDataSource {
             }
         })
         
-        cell.configure(title: (currentRecipes![indexPath.row].label), subtitle: (currentRecipes![indexPath.row].ingredientLines.joined(separator: ", ")), likes: (currentRecipes![indexPath.row].yield), totaTime: (currentRecipes![indexPath.row].totalTime))
+        cell.configure(title: (currentRecipes[indexPath.row].label), subtitle: (currentRecipes[indexPath.row].ingredientLines.joined(separator: ", ")), likes: (currentRecipes[indexPath.row].yield), totaTime: (currentRecipes[indexPath.row].totalTime))
         
         return cell
     }

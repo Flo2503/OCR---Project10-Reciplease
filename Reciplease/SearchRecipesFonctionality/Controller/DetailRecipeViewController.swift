@@ -11,7 +11,6 @@ import Alamofire
 
 class DetailRecipeViewController: UIViewController {
 
-    private let saveData = RecipeEntity()
     private let webService = EdanamWebService()
     private let defaultImage = "defaultImage"
     var detailRecipe: Recipes?
@@ -23,8 +22,8 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var likesLabel: UILabel!
     @IBOutlet weak var totalTimeLabel: UILabel!
-    @IBOutlet weak var tapFavoriteButton: UINavigationItem!
-   
+    @IBOutlet weak var tapFavoriteButton: UIBarButtonItem!
+    
     @IBAction func getDirectionsButton(_ sender: Any) {
         guard let currentUrl = detailRecipe?.url else { return }
         guard let url = URL(string: currentUrl) else { return }
@@ -35,7 +34,8 @@ class DetailRecipeViewController: UIViewController {
         guard let detailRecipe = detailRecipe else {
             return
         }
-        saveData.addRecipeToFavorite(recipes: detailRecipe)
+        RecipeEntity.addRecipeToFavorite(recipes: detailRecipe)
+        self.tapFavoriteButton.image = UIImage(named: "top_on")
     }
     
     
@@ -48,6 +48,7 @@ class DetailRecipeViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         getRecipeImage()
     }
+    
 }
 
 extension DetailRecipeViewController: UITableViewDataSource {
@@ -100,7 +101,6 @@ extension DetailRecipeViewController {
             likesLabel.text = "\(String(likes))"
             totalTimeLabel.text = "\(String(totalTime))m"
         }
-
     }
 }
 

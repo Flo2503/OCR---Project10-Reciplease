@@ -80,7 +80,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="E9p-yW-S2F">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="E9p-yW-S2F">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -357,7 +357,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="AdL-hK-n6p">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" id="AdL-hK-n6p">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
@@ -415,6 +415,11 @@
                                                         <constraint firstItem="jZM-dO-gRS" firstAttribute="top" secondItem="fia-df-UXd" secondAttribute="bottom" constant="3" id="d8y-Re-7bK"/>
                                                         <constraint firstItem="jZM-dO-gRS" firstAttribute="leading" secondItem="OOb-eE-JRV" secondAttribute="leading" constant="1" id="fmn-mp-Bfu"/>
                                                     </constraints>
+                                                </view>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="It1-S3-CH8">
+                                                    <rect key="frame" x="0.0" y="93" width="414" height="56"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" white="0.33333333333333331" alpha="0.5" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                 </view>
                                             </subviews>
                                             <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
@@ -474,7 +479,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="zbu-eq-nIo">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="zbu-eq-nIo">
                                 <rect key="frame" x="0.0" y="88" width="414" height="238"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="zbu-eq-nIo" secondAttribute="height" multiplier="207:119" id="Bit-tY-d9d"/>
@@ -611,7 +616,7 @@
                         <outlet property="ingredientsDetail" destination="PWh-rU-luM" id="5jq-zR-sYx"/>
                         <outlet property="likesLabel" destination="Cxa-dQ-R16" id="yys-Ua-ELp"/>
                         <outlet property="recipeName" destination="7eQ-fo-vsm" id="Pnc-pA-Bql"/>
-                        <outlet property="tapFavoriteButton" destination="FZT-bR-AVk" id="lDX-K7-oXP"/>
+                        <outlet property="tapFavoriteButton" destination="tQu-5t-Hd4" id="JJE-yE-euT"/>
                         <outlet property="totalTimeLabel" destination="kGu-Hg-yYK" id="D1u-JT-48y"/>
                     </connections>
                 </viewController>
@@ -621,6 +626,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="defaultImage" width="2000" height="1000"/>
         <image name="icon_like" width="64" height="64"/>
         <image name="icon_timer" width="64" height="64"/>
         <image name="star.fill" catalog="system" width="64" height="58"/>
