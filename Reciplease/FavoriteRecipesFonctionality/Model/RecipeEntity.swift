@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 class RecipeEntity: NSManagedObject {
-        
+    
     static func fetchAll(viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [Recipes] {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         guard let favoriteRecipes = try? viewContext.fetch(request) else { return [] }
@@ -23,7 +23,6 @@ class RecipeEntity: NSManagedObject {
     }
 
      static func addRecipeToFavorite(recipes: Recipes, viewContext: NSManagedObjectContext = AppDelegate.viewContext) {
-        if !existBy(url: recipes.url, viewContext: viewContext) {
             let favoriteRecipe = RecipeEntity(context: viewContext)
             favoriteRecipe.name = recipes.label
             favoriteRecipe.totalTime = Int64(recipes.totalTime)
@@ -33,7 +32,6 @@ class RecipeEntity: NSManagedObject {
             favoriteRecipe.ingredientLines = recipes.ingredientLines.joined(separator: ",")
             
             try? viewContext.save()
-        }
     }
     
     static func selectBy(url: String, viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [Recipes] {

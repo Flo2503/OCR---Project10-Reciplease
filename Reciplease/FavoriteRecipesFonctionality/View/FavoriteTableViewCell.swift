@@ -10,10 +10,6 @@ import UIKit
 
 class FavoriteTableViewCell: UITableViewCell {
 
-        override func awakeFromNib() {
-        super.awakeFromNib()
-        setUp()
-    }
 
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var totalTimeFavoriteCell: UILabel!
@@ -21,6 +17,11 @@ class FavoriteTableViewCell: UITableViewCell {
     @IBOutlet weak var titleFavoriteCell: UILabel!
     @IBOutlet weak var subtitleFavoriteCell: UILabel!
     @IBOutlet weak var imageFavoriteCell: UIImageView!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setUp()
+    }
     
     func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleFavoriteCell.text = title
@@ -39,6 +40,4 @@ class FavoriteTableViewCell: UITableViewCell {
         self.infoView.layer.borderWidth = 2
         self.infoView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
     }
-
-
 }

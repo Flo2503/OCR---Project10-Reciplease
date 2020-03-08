@@ -21,17 +21,31 @@ class FavoriteViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         favoriteRecipes = RecipeEntity.fetchAll()
         favoriteTableView.reloadData()
+        emptyListy()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
             let detailRecipeVC = segue.destination as! DetailRecipeViewController
-            detailRecipeVC.detailRecipe = detailRecipe
+            detailRecipeVC.recipe = detailRecipe
+        }
+    }
+    
+    private func emptyListy() {
+        if favoriteRecipes.isEmpty {
+            favoriteListIsEmprtyAlert()
         }
     }
 }
 
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            RecipeEntity.deleteBy(url: favoriteRecipes[indexPath.row].url)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         detailRecipe = favoriteRecipes[indexPath.row]
