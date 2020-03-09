@@ -400,9 +400,11 @@
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" id="AdL-hK-n6p">
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="defaultImage" translatesAutoresizingMaskIntoConstraints="NO" id="f1q-zT-i0G">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="150"/>
-                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="150" id="SH6-2X-ZQV"/>
+                                                    </constraints>
                                                 </imageView>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OOb-eE-JRV">
                                                     <rect key="frame" x="336" y="11" width="65" height="45"/>
@@ -494,15 +496,19 @@
                                             </subviews>
                                             <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                             <constraints>
+                                                <constraint firstItem="f1q-zT-i0G" firstAttribute="leading" secondItem="e8O-ZB-e5R" secondAttribute="leading" id="3el-Hk-XfO"/>
                                                 <constraint firstAttribute="bottom" secondItem="It1-S3-CH8" secondAttribute="bottom" id="PhY-Sg-M4o"/>
                                                 <constraint firstAttribute="trailing" secondItem="It1-S3-CH8" secondAttribute="trailing" id="Pip-Ot-Cr3"/>
                                                 <constraint firstItem="It1-S3-CH8" firstAttribute="leading" secondItem="e8O-ZB-e5R" secondAttribute="leading" id="ZPT-vl-BoF"/>
+                                                <constraint firstItem="f1q-zT-i0G" firstAttribute="top" secondItem="e8O-ZB-e5R" secondAttribute="top" id="fDN-c7-SJq"/>
+                                                <constraint firstAttribute="bottom" secondItem="f1q-zT-i0G" secondAttribute="bottom" id="l7z-OV-8Ez"/>
+                                                <constraint firstAttribute="trailing" secondItem="f1q-zT-i0G" secondAttribute="trailing" id="m9J-Xl-t1N"/>
                                                 <constraint firstAttribute="trailing" secondItem="OOb-eE-JRV" secondAttribute="trailing" constant="13" id="qOC-xh-Abb"/>
                                                 <constraint firstItem="OOb-eE-JRV" firstAttribute="top" secondItem="e8O-ZB-e5R" secondAttribute="top" constant="11" id="r3q-PP-9Uy"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageRecipesCell" destination="AdL-hK-n6p" id="2FH-2e-MDK"/>
+                                            <outlet property="imageRecipesCell" destination="f1q-zT-i0G" id="e9h-uh-Osp"/>
                                             <outlet property="infoView" destination="OOb-eE-JRV" id="nOq-qO-EJp"/>
                                             <outlet property="likesRecipesCell" destination="fia-df-UXd" id="FvG-Dg-I0H"/>
                                             <outlet property="subtitleRecipesCell" destination="x25-no-39r" id="eie-HZ-5BW"/>

@@ -21,8 +21,6 @@ class RecipesListViewController: UIViewController {
     
     @IBOutlet weak var recipesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var labelRecipeCell: UILabel!
-    @IBOutlet weak var imageRecipeCell: UIImageView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
