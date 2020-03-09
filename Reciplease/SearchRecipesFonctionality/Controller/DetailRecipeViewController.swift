@@ -103,6 +103,9 @@ extension DetailRecipeViewController {
 
 extension DetailRecipeViewController {
     func setUp() {
+        let backItem = UIBarButtonItem()
+        backItem.title = "Back"
+        navigationItem.backBarButtonItem = backItem
         getDirectionsButton.layer.cornerRadius = 20
         self.infoView.layer.cornerRadius = 7
         self.infoView.layer.borderWidth = 2

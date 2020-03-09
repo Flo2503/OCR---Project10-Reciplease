@@ -25,8 +25,8 @@ class RecipesListViewController: UIViewController {
     @IBOutlet weak var imageRecipeCell: UIImageView!
     
     override func viewDidLoad() {
-         super.viewDidLoad()
-         getRecipes()
+        super.viewDidLoad()
+        getRecipes()
      }
      
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -92,8 +92,8 @@ extension RecipesListViewController: UITableViewDataSource {
         
         return cell
     }
-    
-    
 }
+
+
 
 
