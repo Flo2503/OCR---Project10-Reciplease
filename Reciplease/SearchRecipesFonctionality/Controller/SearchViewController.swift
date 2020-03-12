@@ -10,24 +10,25 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
+    // MARK: - Peoperites, instance
     private let searchWebService = EdanamWebService()
     private let segueIdentifier = "segueToRecipes"
     var ingredientsList: [String] = []
     
-    
+    // MARK: - Outlet
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addIngredientTextField: UITextField!
     @IBOutlet weak var ingredientsTableView: UITableView!
     
+    // MARK: - Actions
     @IBAction func addIngredient(_ sender: Any) {
-        guard let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty else {
-            return
+        if let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty {
+            add(ingredient: name)
+            ingredientsTableView.reloadData()
+            addIngredientTextField.text = ""
         }
-        add(ingredient: name)
-        ingredientsTableView.reloadData()
-        addIngredientTextField.text = ""
     }
     
     @IBAction func dismissKeyboard(_ sender: Any) {
@@ -47,6 +48,7 @@ class SearchViewController: UIViewController {
         }
     }
     
+    // MARK: - Mezthods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cornerRadius()
@@ -75,7 +77,8 @@ class SearchViewController: UIViewController {
     
 }
 
-extension SearchViewController: UITableViewDataSource {
+// MARK: - Extension  allowing to congigure table view and cells details
+extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -93,10 +96,7 @@ extension SearchViewController: UITableViewDataSource {
         
         return cell
     }
-        
-}
-
-extension SearchViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
             removeIngredient(at: indexPath.row)
@@ -105,6 +105,7 @@ extension SearchViewController: UITableViewDelegate {
     }
 }
 
+// MARK: - Extension set up diplay
 extension SearchViewController {
     func cornerRadius() {
         clearButton.layer.cornerRadius = 20

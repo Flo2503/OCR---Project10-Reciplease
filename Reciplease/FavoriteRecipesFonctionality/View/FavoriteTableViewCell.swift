@@ -10,7 +10,6 @@ import UIKit
 
 class FavoriteTableViewCell: UITableViewCell {
 
-
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var totalTimeFavoriteCell: UILabel!
     @IBOutlet weak var likesFavoriteCell: UILabel!
@@ -23,6 +22,7 @@ class FavoriteTableViewCell: UITableViewCell {
         setUp()
     }
     
+    /// Allow tio diplay information in cells
     func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleFavoriteCell.text = title
         subtitleFavoriteCell.text = subtitle
@@ -30,11 +30,11 @@ class FavoriteTableViewCell: UITableViewCell {
         likesFavoriteCell.text = "\(String(likes))"
     }
     
+    //// Allow to display image in cels
     func configureImage(image: UIImage) {
         imageFavoriteCell.image = image
-        
     }
-     
+    
     private func setUp() {
         self.infoView.layer.cornerRadius = 7
         self.infoView.layer.borderWidth = 2

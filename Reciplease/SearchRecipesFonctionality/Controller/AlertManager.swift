@@ -27,5 +27,4 @@ extension UIViewController {
         alertVC.addAction(UIAlertAction(title: "Got it", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
     }
-
 }

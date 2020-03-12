@@ -10,7 +10,8 @@ import UIKit
 import Alamofire
 
 class RecipesListViewController: UIViewController {
-
+    
+    // MARK: - Properties, instance
     private let segueIdentifier = "segueToDetail"
     private let defaultImage = "defaultImage"
     private let webService = EdanamWebService()
@@ -18,10 +19,12 @@ class RecipesListViewController: UIViewController {
     var recipe: Recipes?
     var ingredientsList: [String] = []
     
-    
+    // MARK: - Outlet
     @IBOutlet weak var recipesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
+    
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         getRecipes()
@@ -34,6 +37,7 @@ class RecipesListViewController: UIViewController {
          }
      }
     
+    /// Network call to get recipes details
     private func getRecipes() {
         toggleIndicator(shown: true)
         webService.getData(for: ingredientsList, callback: { (success, recipes) in
@@ -55,15 +59,14 @@ class RecipesListViewController: UIViewController {
     }
 }
 
-extension RecipesListViewController: UITableViewDelegate {
+// MARK: - Extension allowing to congigure table view and cells details
+extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         recipe = recipes[indexPath.row]
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
     }
-}
-
-extension RecipesListViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -74,15 +77,14 @@ extension RecipesListViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as? RecipesTableViewCell else {
-            return UITableViewCell()
-        }
+        return UITableViewCell()
+    }
         
         webService.getImage(url: (recipes[indexPath.row].image), callback: { (image) in
             DispatchQueue.main.async {
-                guard let image = image else {
-                    return cell.configureImage(image: UIImage(named: self.defaultImage)!)
+                if let image = image {
+                    cell.configureImage(image: image)
                 }
-                cell.configureImage(image: image)
             }
         })
         

@@ -11,11 +11,13 @@ import Alamofire
 
 class DetailRecipeViewController: UIViewController {
 
+    // MARK: - Properties, instances
     private let webService = EdanamWebService()
     private let defaultImage = "defaultImage"
     var recipe: Recipes?
     let defaultValue = " - "
     
+    // MARK: - Outlet
     @IBOutlet weak var imageRecipe: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var ingredientsDetail: UITableView!
@@ -26,7 +28,7 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var gradientView: UIView!
     
-    
+    // MARK: - Actions
     @IBAction func getDirectionsButton(_ sender: Any) {
         guard let currentUrl = recipe?.url else { return }
         guard let url = URL(string: currentUrl) else { return }
@@ -36,20 +38,8 @@ class DetailRecipeViewController: UIViewController {
     @IBAction func tapFavoriteButton(_ sender: Any) {
         saveRecipe()
     }
-    
-    private func saveRecipe() {
-        guard let url = recipe?.url, let recipe = recipe else {
-            return
-        }
-        if RecipeEntity.existBy(url: url) {
-            RecipeEntity.deleteBy(url: url)
-            favoriteButton.image = UIImage(named: "top_off")
-        } else {
-            RecipeEntity.addRecipeToFavorite(recipes: recipe)
-            favoriteButton.image = UIImage(named: "top_on")
-        }
-    }
-    
+
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         ingredientsDetail.reloadData()
@@ -60,9 +50,24 @@ class DetailRecipeViewController: UIViewController {
         getRecipeImage()
         buttonSetUp()
     }
+    
+    /// Allow to save or delete recipe in favorite
+    private func saveRecipe() {
+        if let url = recipe?.url, let recipe = recipe {
+            if RecipeEntity.existBy(url: url) {
+                RecipeEntity.deleteBy(url: url)
+                favoriteButton.image = UIImage(named: "top_off")
+            } else {
+                RecipeEntity.addRecipeToFavorite(recipes: recipe)
+                favoriteButton.image = UIImage(named: "top_on")
+            }
+        }
+    }
 }
 
+// MARK: - Extension allowing to congigure table view and cells details
 extension DetailRecipeViewController: UITableViewDataSource {
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -85,6 +90,7 @@ extension DetailRecipeViewController: UITableViewDataSource {
     }
 }
 
+// MARK: - Extension: get recipe image
 extension DetailRecipeViewController {
      func getRecipeImage() {
         guard let urlImage = recipe?.image else {
@@ -101,6 +107,7 @@ extension DetailRecipeViewController {
     }
 }
 
+// MARK: - Extension: set up diplay
 extension DetailRecipeViewController {
     func setUp() {
         let backItem = UIBarButtonItem()

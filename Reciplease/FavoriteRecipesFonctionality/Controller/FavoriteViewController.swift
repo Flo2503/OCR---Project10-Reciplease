@@ -10,18 +10,21 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     
+    // MARK: - proprtioes, instance
     private var favoriteRecipes: [Recipes] = []
     private let webService = EdanamWebService()
     private let defaultImage = "defaultImage"
     private let segueIdentifier = "segueFromFavToDetail"
     var detailRecipe: Recipes?
 
+    // MARK: - Oulet
     @IBOutlet weak var favoriteTableView: UITableView!
     
+    // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
-        favoriteRecipes = RecipeEntity.fetchAll()
+        favoriteRecipes = RecipeEntity.all()
         favoriteTableView.reloadData()
-        emptyListy()
+        emptyList()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -31,21 +34,15 @@ class FavoriteViewController: UIViewController {
         }
     }
     
-    private func emptyListy() {
+    private func emptyList() {
         if favoriteRecipes.isEmpty {
             favoriteListIsEmprtyAlert()
         }
     }
 }
 
+// MARK: - Extension allowing to congigure table view and cells details
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
-    
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if editingStyle == .delete {
-            RecipeEntity.deleteBy(url: favoriteRecipes[indexPath.row].url)
-            tableView.deleteRows(at: [indexPath], with: .automatic)
-        }
-    }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         detailRecipe = favoriteRecipes[indexPath.row]
@@ -67,10 +64,9 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         
         webService.getImage(url: (favoriteRecipes[indexPath.row].image), callback: { (image) in
             DispatchQueue.main.async {
-                guard let image = image else {
-                    return cell.configureImage(image: UIImage(named: self.defaultImage)!)
+                if let image = image {
+                    cell.configureImage(image: image)
                 }
-                cell.configureImage(image: image)
             }
         })
 

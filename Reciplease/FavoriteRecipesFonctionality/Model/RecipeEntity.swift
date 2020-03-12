@@ -11,17 +11,21 @@ import CoreData
 
 class RecipeEntity: NSManagedObject {
     
-    static func fetchAll(viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [Recipes] {
+    /// Allow to recover stored datas
+    static func all(viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [Recipes] {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         guard let favoriteRecipes = try? viewContext.fetch(request) else { return [] }
         var recipes = [Recipes]()
         for favorite in favoriteRecipes {
-            let recipe = Recipes(label: favorite.name!, image: favorite.image!, url: favorite.url!, yield: Int(favorite.yield), ingredientLines: (favorite.ingredientLines?.split(separator: ",").map{String($0)})!, totalTime: Int(favorite.totalTime))
-            recipes.append(recipe)
+            if let name = favorite.name, let image = favorite.image, let url = favorite.url, let ingredientLines = favorite.ingredientLines {
+                let recipe = Recipes(label: name, image: image, url: url, yield: Int(favorite.yield), ingredientLines: (ingredientLines.split(separator: ",").map{String($0)}), totalTime: Int(favorite.totalTime))
+                recipes.append(recipe)
+            }
         }
         return recipes
     }
-
+    
+    /// Allow to store datas
      static func addRecipeToFavorite(recipes: Recipes, viewContext: NSManagedObjectContext = AppDelegate.viewContext) {
             let favoriteRecipe = RecipeEntity(context: viewContext)
             favoriteRecipe.name = recipes.label
@@ -34,18 +38,7 @@ class RecipeEntity: NSManagedObject {
             try? viewContext.save()
     }
     
-    static func selectBy(url: String, viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [Recipes] {
-        let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
-        request.predicate = NSPredicate(format: "url == %@", url)
-        guard let favoriteRecipes = try? viewContext.fetch(request) else { return [] }
-        var recipes = [Recipes]()
-        for favorite in favoriteRecipes {
-            let recipe = Recipes(label: favorite.name!, image: favorite.image!, url: favorite.url!, yield: Int(favorite.yield), ingredientLines: (favorite.ingredientLines?.split(separator: ",").map{String($0)})!, totalTime: Int(favorite.totalTime))
-            recipes.append(recipe)
-        }
-        return recipes
-    }
-    
+    /// Check if datas already exist in data base comparing url
     static func existBy(url: String, viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> Bool {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         request.predicate = NSPredicate(format: "url == %@", url)
@@ -54,6 +47,7 @@ class RecipeEntity: NSManagedObject {
         return count > 0
     }
     
+    /// Allow to delete datas. Use url in parameters to call the right datas
     static func deleteBy(url: String, viewContext: NSManagedObjectContext = AppDelegate.viewContext) {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         request.predicate = NSPredicate(format: "url == %@", url)

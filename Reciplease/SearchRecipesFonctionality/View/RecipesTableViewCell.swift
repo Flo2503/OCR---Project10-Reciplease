@@ -10,12 +10,6 @@ import UIKit
 
 class RecipesTableViewCell: UITableViewCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        setUp()
-    }
-
-
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var totalTimeRecipesCell: UILabel!
     @IBOutlet weak var likesRecipesCell: UILabel!
@@ -23,6 +17,12 @@ class RecipesTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleRecipesCell: UILabel!
     @IBOutlet weak var imageRecipesCell: UIImageView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        setUp()
+    }
+    
+    /// Allow tio diplay information in cells
     func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleRecipesCell.text = title
         subtitleRecipesCell.text = subtitle
@@ -30,6 +30,7 @@ class RecipesTableViewCell: UITableViewCell {
         likesRecipesCell.text = "\(String(likes))"
     }
     
+    //// Allow to display image in cels
     func configureImage(image: UIImage) {
         imageRecipesCell.image = image
     }
