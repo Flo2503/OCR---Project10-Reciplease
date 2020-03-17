@@ -10,12 +10,12 @@ import UIKit
 
 class SearchViewController: UIViewController {
     
-    // MARK: - Peoperites, instance
+    // MARK: - Peoperites, instances
     private let searchWebService = EdanamWebService()
     private let segueIdentifier = "segueToRecipes"
     var ingredientsList: [String] = []
     
-    // MARK: - Outlet
+    // MARK: - Outlets
     @IBOutlet weak var clearButton: UIButton!
     @IBOutlet weak var searchButton: UIButton!
     @IBOutlet weak var addButton: UIButton!
@@ -48,7 +48,7 @@ class SearchViewController: UIViewController {
         }
     }
     
-    // MARK: - Mezthods
+    // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cornerRadius()

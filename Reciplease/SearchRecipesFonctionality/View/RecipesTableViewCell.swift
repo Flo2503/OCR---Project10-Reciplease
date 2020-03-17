@@ -10,6 +10,7 @@ import UIKit
 
 class RecipesTableViewCell: UITableViewCell {
 
+    //MARK: - Outlets
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var totalTimeRecipesCell: UILabel!
     @IBOutlet weak var likesRecipesCell: UILabel!
@@ -17,6 +18,7 @@ class RecipesTableViewCell: UITableViewCell {
     @IBOutlet weak var subtitleRecipesCell: UILabel!
     @IBOutlet weak var imageRecipesCell: UIImageView!
     
+// MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         setUp()

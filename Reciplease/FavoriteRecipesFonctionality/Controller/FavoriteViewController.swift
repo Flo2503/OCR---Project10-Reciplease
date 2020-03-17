@@ -10,14 +10,14 @@ import UIKit
 
 class FavoriteViewController: UIViewController {
     
-    // MARK: - proprtioes, instance
+    // MARK: - Proprties, instances
     private var favoriteRecipes: [Recipes] = []
     private let webService = EdanamWebService()
     private let defaultImage = "defaultImage"
     private let segueIdentifier = "segueFromFavToDetail"
     var detailRecipe: Recipes?
 
-    // MARK: - Oulet
+    // MARK: - Oulets
     @IBOutlet weak var favoriteTableView: UITableView!
     
     // MARK: - Methods

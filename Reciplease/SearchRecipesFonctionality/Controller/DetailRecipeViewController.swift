@@ -17,7 +17,7 @@ class DetailRecipeViewController: UIViewController {
     var recipe: Recipes?
     let defaultValue = " - "
     
-    // MARK: - Outlet
+    // MARK: - Outlets
     @IBOutlet weak var imageRecipe: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
     @IBOutlet weak var ingredientsDetail: UITableView!

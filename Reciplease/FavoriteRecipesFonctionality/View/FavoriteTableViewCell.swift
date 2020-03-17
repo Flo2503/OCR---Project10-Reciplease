@@ -10,6 +10,7 @@ import UIKit
 
 class FavoriteTableViewCell: UITableViewCell {
 
+    // MARK: - Oulets
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var totalTimeFavoriteCell: UILabel!
     @IBOutlet weak var likesFavoriteCell: UILabel!
@@ -22,6 +23,7 @@ class FavoriteTableViewCell: UITableViewCell {
         setUp()
     }
     
+    // MARK: - Methods
     /// Allow tio diplay information in cells
     func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleFavoriteCell.text = title

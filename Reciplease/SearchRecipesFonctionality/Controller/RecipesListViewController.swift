@@ -11,7 +11,7 @@ import Alamofire
 
 class RecipesListViewController: UIViewController {
     
-    // MARK: - Properties, instance
+    // MARK: - Properties, instances
     private let segueIdentifier = "segueToDetail"
     private let defaultImage = "defaultImage"
     private let webService = EdanamWebService()
@@ -19,7 +19,7 @@ class RecipesListViewController: UIViewController {
     var recipe: Recipes?
     var ingredientsList: [String] = []
     
-    // MARK: - Outlet
+    // MARK: - Outlets
     @IBOutlet weak var recipesTableView: UITableView!
     @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     

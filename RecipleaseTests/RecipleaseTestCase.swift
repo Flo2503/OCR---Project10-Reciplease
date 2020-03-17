@@ -10,5 +10,8 @@ import XCTest
 @testable import Reciplease
 
 class RecipleaseTestCase: XCTestCase {
-
+    
+    func toto() {
+        
+    }
 }
