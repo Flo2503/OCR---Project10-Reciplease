@@ -94,6 +94,15 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     }
 }
 
+extension RecipesListViewController {
+    
+    private func textNavBar() {
+        self.navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.white,
+         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
+    }
+}
+
 
 
 

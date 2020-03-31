@@ -27,6 +27,10 @@ class FavoriteViewController: UIViewController {
         emptyList()
     }
     
+    override func viewDidLoad() {
+        self.textNavBar()
+    }
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == segueIdentifier {
             let detailRecipeVC = segue.destination as! DetailRecipeViewController
@@ -73,6 +77,15 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
         cell.configure(title: favoriteRecipes[indexPath.row].label, subtitle: favoriteRecipes[indexPath.row].ingredientLines.joined(separator: ", "), likes: favoriteRecipes[indexPath.row].yield, totaTime: favoriteRecipes[indexPath.row].totalTime)
         
         return cell
+    }
+}
+
+extension FavoriteViewController {
+    
+    private func textNavBar() {
+        self.navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.white,
+         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }
 

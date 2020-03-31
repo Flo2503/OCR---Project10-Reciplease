@@ -52,6 +52,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.cornerRadius()
+        self.textNavBar()
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -107,10 +108,16 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
 // MARK: - Extension set up diplay
 extension SearchViewController {
-    func cornerRadius() {
+    private func cornerRadius() {
         clearButton.layer.cornerRadius = 20
         searchButton.layer.cornerRadius = 20
         addButton.layer.cornerRadius = 20
+    }
+    
+    private func textNavBar() {
+        self.navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.white,
+         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }
 

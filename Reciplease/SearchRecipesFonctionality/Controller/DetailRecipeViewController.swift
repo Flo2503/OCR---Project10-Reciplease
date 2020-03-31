@@ -92,7 +92,7 @@ extension DetailRecipeViewController: UITableViewDataSource {
 
 // MARK: - Extension: get recipe image
 extension DetailRecipeViewController {
-     func getRecipeImage() {
+     private func getRecipeImage() {
         guard let urlImage = recipe?.image else {
             return
         }
@@ -109,7 +109,7 @@ extension DetailRecipeViewController {
 
 // MARK: - Extension: set up diplay
 extension DetailRecipeViewController {
-    func setUp() {
+    private func setUp() {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
@@ -128,12 +128,18 @@ extension DetailRecipeViewController {
         }
     }
     
-    func buttonSetUp() {
+    private func buttonSetUp() {
         if let url = recipe?.url, RecipeEntity.existBy(url: url) {
             favoriteButton.image = UIImage(named: "top_on")
         } else {
             favoriteButton.image = UIImage(named: "top_off")
         }
+    }
+    
+    private func textNavBar() {
+        self.navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.white,
+         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }
 
