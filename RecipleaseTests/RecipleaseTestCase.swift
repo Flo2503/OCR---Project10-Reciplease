@@ -7,9 +7,41 @@
 //
 
 import XCTest
+import CoreData
 @testable import Reciplease
 
 class RecipleaseTestCase: XCTestCase {
     
-   
+    let fakeRecipe = Recipes(label: "label",
+                             image: "image",
+                             url: "urlTestFake",
+                             yield: 1,
+                             ingredientLines: ["chicken", "cheese"],
+                             totalTime: 1)
+    
+    override func setUp() {
+        RecipeEntity.deleteBy(url: "urlTestFake")
+    }
+
+    override func tearDown() {
+        RecipeEntity.deleteBy(url: "urlTestFake")
+    }
+    
+    func testGivenFavorites_WhenAddFavoriteTest_ThenFavoriteTestIsAddedAndExists() {
+        
+        RecipeEntity.addRecipeToFavorite(recipes: fakeRecipe)
+        
+        XCTAssertTrue(RecipeEntity.existBy(url: "urlTestFake"))
+    }
+    
+    func testGivenFavorites_WhenAddFavoriteTestAndDeleteIt_ThenFavoriteTestShouldNotExist() {
+        
+        RecipeEntity.addRecipeToFavorite(recipes: fakeRecipe)
+        
+        XCTAssertTrue(RecipeEntity.existBy(url: "urlTestFake"))
+        
+        RecipeEntity.deleteBy(url: "urlTestFake")
+        
+        XCTAssertFalse(RecipeEntity.existBy(url: "urlTestFake"))
+    }
 }

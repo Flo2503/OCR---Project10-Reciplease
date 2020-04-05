@@ -14,7 +14,5 @@ import Mockingjay
 
 class RecipleaseServiceTestCase: XCTestCase {
     
-    func testRefresh_FailedToFetchWeatherData_InvalidResponse() {
-        let body = ["ingredient1":"chicken", "ingredient2":"onion", "ingredient3":"cheese"]
-    }
+    
 }

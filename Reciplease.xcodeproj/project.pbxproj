@@ -8,10 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3FB70EB45E498E81E4AC31E5 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD68E67755CC129F5595BFD /* Pods_Reciplease.framework */; };
-		5C24C68223CE4C40004ED8D9 /* FakeResponseData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68123CE4C40004ED8D9 /* FakeResponseData.swift */; };
-		5C24C68523CE4CD8004ED8D9 /* URLSessionFake.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68423CE4CD8004ED8D9 /* URLSessionFake.swift */; };
 		5C24C68723CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68623CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift */; };
-		5C24C68A23CF8D29004ED8D9 /* Recipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C24C68923CF8D29004ED8D9 /* Recipe.json */; };
 		5C24C68C23CFB194004ED8D9 /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */; };
 		5C24C69023D2062D004ED8D9 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68F23D2062D004ED8D9 /* AlertManager.swift */; };
 		5C24C69323E380BF004ED8D9 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */; };
@@ -45,10 +42,7 @@
 
 /* Begin PBXFileReference section */
 		396C4301ADE097C663E62395 /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
-		5C24C68123CE4C40004ED8D9 /* FakeResponseData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FakeResponseData.swift; sourceTree = "<group>"; };
-		5C24C68423CE4CD8004ED8D9 /* URLSessionFake.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLSessionFake.swift; sourceTree = "<group>"; };
 		5C24C68623CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseServiceTestCase.swift; sourceTree = "<group>"; };
-		5C24C68923CF8D29004ED8D9 /* Recipe.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = Recipe.json; sourceTree = "<group>"; };
 		5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewController.swift; sourceTree = "<group>"; };
 		5C24C68F23D2062D004ED8D9 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
@@ -109,16 +103,6 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
-		5C24C68323CE4CA0004ED8D9 /* DataTest */ = {
-			isa = PBXGroup;
-			children = (
-				5C24C68123CE4C40004ED8D9 /* FakeResponseData.swift */,
-				5C24C68423CE4CD8004ED8D9 /* URLSessionFake.swift */,
-				5C24C68923CF8D29004ED8D9 /* Recipe.json */,
-			);
-			path = DataTest;
-			sourceTree = "<group>";
-		};
 		5C71E31623C670F9004B7118 = {
 			isa = PBXGroup;
 			children = (
@@ -158,7 +142,6 @@
 				5C24C68623CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift */,
 				5C9E992E24196EAF004FB33A /* RecipleaseTestCase.swift */,
 				5C71E33E23C670FB004B7118 /* Info.plist */,
-				5C24C68323CE4CA0004ED8D9 /* DataTest */,
 			);
 			path = RecipleaseTests;
 			sourceTree = "<group>";
@@ -359,7 +342,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				5C24C68A23CF8D29004ED8D9 /* Recipe.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -473,8 +455,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C9E992F24196EAF004FB33A /* RecipleaseTestCase.swift in Sources */,
-				5C24C68523CE4CD8004ED8D9 /* URLSessionFake.swift in Sources */,
-				5C24C68223CE4C40004ED8D9 /* FakeResponseData.swift in Sources */,
 				5C24C68723CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
