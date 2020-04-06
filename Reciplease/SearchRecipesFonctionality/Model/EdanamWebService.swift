@@ -10,10 +10,10 @@ import Foundation
 import Alamofire
 
 class EdanamWebService {
-    
+
     private let apiManager = ApiManager()
-    
-    /// Network call to get recipes. In parameter : Ingredients list from user. Callback returns Bool for success and Recipes object
+
+/// Network call to get recipes. In parameter : Ingredients list from user. Callback returns Bool for success and Recipes object
     func getData(for ingredients: [String], callback: @escaping (Bool, [Recipes]?) -> Void) {
         let stringIngredientsRepresentation = ingredients.joined(separator: ",")
         let param = ["app_key": apiManager.api,
@@ -37,7 +37,7 @@ class EdanamWebService {
             }
         }
     }
-    
+
     /// Network call to get recipes. In parameter : image url. Callback returns UIImage.
     func getImage(url: String, callback: @escaping ((UIImage?) -> Void)) {
         AF.download(url).responseData { response in

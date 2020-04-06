@@ -259,6 +259,7 @@
 				5C71E31C23C670F9004B7118 /* Frameworks */,
 				5C71E31D23C670F9004B7118 /* Resources */,
 				28FFE0802D359626CF74D9F0 /* [CP] Embed Pods Frameworks */,
+				5C3D316D243A8D4800C7F253 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -381,6 +382,23 @@
 			shellPath = /bin/sh;
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Reciplease-RecipleaseTests/Pods-Reciplease-RecipleaseTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
+		};
+		5C3D316D243A8D4800C7F253 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
 		};
 		F367C57E9012D0B133FB8C02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;

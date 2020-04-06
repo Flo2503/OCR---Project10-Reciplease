@@ -16,7 +16,7 @@ class DetailRecipeViewController: UIViewController {
     private let defaultImage = "defaultImage"
     var recipe: Recipes?
     let defaultValue = " - "
-    
+
     // MARK: - Outlets
     @IBOutlet weak var imageRecipe: UIImageView!
     @IBOutlet weak var recipeName: UILabel!
@@ -27,14 +27,14 @@ class DetailRecipeViewController: UIViewController {
     @IBOutlet weak var totalTimeLabel: UILabel!
     @IBOutlet weak var favoriteButton: UIBarButtonItem!
     @IBOutlet weak var gradientView: UIView!
-    
+
     // MARK: - Actions
     @IBAction func getDirectionsButton(_ sender: Any) {
         guard let currentUrl = recipe?.url else { return }
         guard let url = URL(string: currentUrl) else { return }
         UIApplication.shared.open(url)
     }
-    
+
     @IBAction func tapFavoriteButton(_ sender: Any) {
         saveRecipe()
     }
@@ -45,12 +45,12 @@ class DetailRecipeViewController: UIViewController {
         ingredientsDetail.reloadData()
         setUp()
     }
-    
+
     override func viewWillAppear(_ animated: Bool) {
         getRecipeImage()
         buttonSetUp()
     }
-    
+
     /// Allow to save or delete recipe in favorite
     private func saveRecipe() {
         if let url = recipe?.url, let recipe = recipe {
@@ -67,23 +67,23 @@ class DetailRecipeViewController: UIViewController {
 
 // MARK: - Extension allowing to congigure table view and cells details
 extension DetailRecipeViewController: UITableViewDataSource {
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
-    
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let cellsCount = recipe?.ingredientLines.count else {
             return 0
         }
         return cellsCount
     }
-    
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "detailIngredientsCell", for: indexPath)
-        
+
         let ingredient = recipe?.ingredientLines[indexPath.row]
-        
+
         cell.textLabel?.text = "- \(String(ingredient ?? " - "))"
         cell.textLabel?.numberOfLines = 0
         return cell
@@ -116,7 +116,7 @@ extension DetailRecipeViewController {
         getDirectionsButton.layer.cornerRadius = 20
         self.infoView.layer.cornerRadius = 7
         self.infoView.layer.borderWidth = 2
-        self.infoView.layer.borderColor = UIColor(red:222/255, green:225/255, blue:227/255, alpha: 1).cgColor
+        self.infoView.layer.borderColor = UIColor(red: 222/255, green: 225/255, blue: 227/255, alpha: 1).cgColor
         if let likes = recipe?.yield, let totalTime = recipe?.totalTime, let name = recipe?.label {
             likesLabel.text = "\(String(likes))"
             totalTimeLabel.text = "\(String(totalTime))m"
@@ -127,7 +127,7 @@ extension DetailRecipeViewController {
             recipeName.text = defaultValue
         }
     }
-    
+
     private func buttonSetUp() {
         if let url = recipe?.url, RecipeEntity.existBy(url: url) {
             favoriteButton.image = UIImage(named: "top_on")
@@ -135,24 +135,10 @@ extension DetailRecipeViewController {
             favoriteButton.image = UIImage(named: "top_off")
         }
     }
-    
+
     private func textNavBar() {
         self.navigationController?.navigationBar.titleTextAttributes =
         [NSAttributedString.Key.foregroundColor: UIColor.white,
          NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
