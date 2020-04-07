@@ -21,7 +21,7 @@ class FavoriteViewController: UIViewController {
 
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
-        favoriteRecipes = RecipeEntity.all()
+        favoriteRecipes = RecipeEntity.getAll()
         favoriteTableView.reloadData()
         emptyList()
     }

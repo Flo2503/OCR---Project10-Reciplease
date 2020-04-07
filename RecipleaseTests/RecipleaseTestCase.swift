@@ -44,4 +44,18 @@ class RecipleaseTestCase: XCTestCase {
 
         XCTAssertFalse(RecipeEntity.existBy(url: "urlTestFake"))
     }
+
+    func testGivenFavorites_WhenFavoriteTestIsAdded_ThenFavoriteTestShouldExist() {
+
+        RecipeEntity.addRecipeToFavorite(recipes: fakeRecipe)
+
+        let recipes = RecipeEntity.getAll()
+
+        if RecipeEntity.getAll().count == 1 {
+            XCTAssertEqual(recipes, [fakeRecipe])
+        } else {
+            XCTAssertNotEqual(recipes, [fakeRecipe])
+        }
+        XCTAssertTrue(RecipeEntity.existBy(url: "urlTestFake"))
+    }
 }

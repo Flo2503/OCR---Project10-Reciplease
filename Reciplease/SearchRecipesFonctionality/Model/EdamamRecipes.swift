@@ -16,7 +16,7 @@ struct Hit: Decodable {
     let recipe: Recipes
 }
 
-struct Recipes: Decodable {
+struct Recipes: Decodable, Equatable {
     let label: String
     let image: String
     let url: String

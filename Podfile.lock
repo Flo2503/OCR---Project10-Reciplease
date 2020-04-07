@@ -7,23 +7,27 @@ PODS:
     - URITemplate (~> 3.0)
   - Mockingjay/XCTest (3.0.0-alpha.1):
     - Mockingjay/Core
+  - SwiftyJSON (4.3.0)
   - URITemplate (3.0.0)
 
 DEPENDENCIES:
   - Alamofire (~> 5.0.0-rc.3)
   - Mockingjay (= 3.0.0-alpha.1)
+  - SwiftyJSON (~> 4.0)
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - Mockingjay
+    - SwiftyJSON
     - URITemplate
 
 SPEC CHECKSUMS:
   Alamofire: df2f8f826963b08b9a870791ad48e07a10090b2e
   Mockingjay: 0f7c5aa49c7f1b95621cee3c79b557141f5a225c
+  SwiftyJSON: 6faa0040f8b59dead0ee07436cbf76b73c08fd08
   URITemplate: 58e0d47f967006c5d59888af5356c4a8ed3b197d
 
-PODFILE CHECKSUM: fb84b57e9da3650bc48ff73302caa9847997496e
+PODFILE CHECKSUM: 9f0cec7a9326922a617eed790f1eb9da12f5cbdd
 
 COCOAPODS: 1.8.4

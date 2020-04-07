@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		3FB70EB45E498E81E4AC31E5 /* Pods_Reciplease.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AD68E67755CC129F5595BFD /* Pods_Reciplease.framework */; };
-		5C24C68723CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68623CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift */; };
 		5C24C68C23CFB194004ED8D9 /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */; };
 		5C24C69023D2062D004ED8D9 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68F23D2062D004ED8D9 /* AlertManager.swift */; };
 		5C24C69323E380BF004ED8D9 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */; };
@@ -16,6 +15,8 @@
 		5C4AB18C23C9EE47007CC952 /* EdanamWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB18B23C9EE47007CC952 /* EdanamWebService.swift */; };
 		5C4AB19023CB756D007CC952 /* EdamamRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */; };
 		5C4AB19223CBB5F2007CC952 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB19123CBB5F2007CC952 /* ApiManager.swift */; };
+		5C552F9A243CA4AD0031A44C /* FakeRecipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C552F99243CA4AD0031A44C /* FakeRecipe.json */; };
+		5C552F9C243CAB990031A44C /* RecipleaseServiceTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C552F9B243CAB990031A44C /* RecipleaseServiceTestCase.swift */; };
 		5C71E32323C670F9004B7118 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E32223C670F9004B7118 /* AppDelegate.swift */; };
 		5C71E32523C670F9004B7118 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C71E32423C670F9004B7118 /* SceneDelegate.swift */; };
 		5C71E32A23C670F9004B7118 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5C71E32823C670F9004B7118 /* Main.storyboard */; };
@@ -42,7 +43,6 @@
 
 /* Begin PBXFileReference section */
 		396C4301ADE097C663E62395 /* Pods-Reciplease.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Reciplease.debug.xcconfig"; path = "Target Support Files/Pods-Reciplease/Pods-Reciplease.debug.xcconfig"; sourceTree = "<group>"; };
-		5C24C68623CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseServiceTestCase.swift; sourceTree = "<group>"; };
 		5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewController.swift; sourceTree = "<group>"; };
 		5C24C68F23D2062D004ED8D9 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
@@ -50,6 +50,8 @@
 		5C4AB18B23C9EE47007CC952 /* EdanamWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdanamWebService.swift; sourceTree = "<group>"; };
 		5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipes.swift; sourceTree = "<group>"; };
 		5C4AB19123CBB5F2007CC952 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		5C552F99243CA4AD0031A44C /* FakeRecipe.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeRecipe.json; sourceTree = "<group>"; };
+		5C552F9B243CAB990031A44C /* RecipleaseServiceTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipleaseServiceTestCase.swift; sourceTree = "<group>"; };
 		5C71E31F23C670F9004B7118 /* Reciplease.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reciplease.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C71E32223C670F9004B7118 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5C71E32423C670F9004B7118 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -139,8 +141,9 @@
 		5C71E33B23C670FB004B7118 /* RecipleaseTests */ = {
 			isa = PBXGroup;
 			children = (
-				5C24C68623CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift */,
+				5C552F9B243CAB990031A44C /* RecipleaseServiceTestCase.swift */,
 				5C9E992E24196EAF004FB33A /* RecipleaseTestCase.swift */,
+				5C552F99243CA4AD0031A44C /* FakeRecipe.json */,
 				5C71E33E23C670FB004B7118 /* Info.plist */,
 			);
 			path = RecipleaseTests;
@@ -343,6 +346,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C552F9A243CA4AD0031A44C /* FakeRecipe.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -472,8 +476,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5C552F9C243CAB990031A44C /* RecipleaseServiceTestCase.swift in Sources */,
 				5C9E992F24196EAF004FB33A /* RecipleaseTestCase.swift in Sources */,
-				5C24C68723CE4D68004ED8D9 /* RecipleaseServiceTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

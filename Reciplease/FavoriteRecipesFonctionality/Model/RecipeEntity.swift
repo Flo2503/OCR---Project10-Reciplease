@@ -12,7 +12,7 @@ import CoreData
 class RecipeEntity: NSManagedObject {
 
     /// Allow to recover stored datas
-    static func all(viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [Recipes] {
+    static func getAll(viewContext: NSManagedObjectContext = AppDelegate.viewContext) -> [Recipes] {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         guard let favoriteRecipes = try? viewContext.fetch(request) else { return [] }
         var recipes = [Recipes]()
