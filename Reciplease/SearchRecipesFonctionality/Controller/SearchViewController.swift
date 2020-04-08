@@ -113,7 +113,7 @@ extension SearchViewController: UITextFieldDelegate {
          NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 
-    internal func textFieldShouldReturnAndAddIngredient(_ textField: UITextField) -> Bool {
+    internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addIngredientTextField.resignFirstResponder()
         if let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty {
             add(ingredient: name)
