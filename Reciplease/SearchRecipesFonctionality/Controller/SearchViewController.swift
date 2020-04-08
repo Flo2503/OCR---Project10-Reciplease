@@ -69,12 +69,6 @@ class SearchViewController: UIViewController {
     private func add(ingredient: String) {
         ingredientsList.append(ingredient)
     }
-
-    private func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        addIngredient(self)
-        return true
-    }
 }
 
 // MARK: - Extension  allowing to congigure table view and cells details
@@ -106,7 +100,7 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 }
 
 // MARK: - Extension set up diplay
-extension SearchViewController {
+extension SearchViewController: UITextFieldDelegate {
     private func cornerRadius() {
         clearButton.layer.cornerRadius = 20
         searchButton.layer.cornerRadius = 20
@@ -117,5 +111,15 @@ extension SearchViewController {
         self.navigationController?.navigationBar.titleTextAttributes =
         [NSAttributedString.Key.foregroundColor: UIColor.white,
          NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
+    }
+
+    internal func textFieldShouldReturnAndAddIngredient(_ textField: UITextField) -> Bool {
+        addIngredientTextField.resignFirstResponder()
+        if let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty {
+            add(ingredient: name)
+            ingredientsTableView.reloadData()
+            addIngredientTextField.text = ""
+        }
+        return true
     }
 }

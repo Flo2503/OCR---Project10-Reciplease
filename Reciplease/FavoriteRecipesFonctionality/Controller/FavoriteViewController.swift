@@ -18,6 +18,7 @@ class FavoriteViewController: UIViewController {
 
     // MARK: - Oulets
     @IBOutlet weak var favoriteTableView: UITableView!
+    @IBOutlet weak var helpView: UIView!
 
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
@@ -39,7 +40,7 @@ class FavoriteViewController: UIViewController {
 
     private func emptyList() {
         if favoriteRecipes.isEmpty {
-            favoriteListIsEmprtyAlert()
+            favoriteTableView.backgroundView = helpView
         }
     }
 }
