@@ -78,7 +78,7 @@
                                             <constraint firstAttribute="height" constant="170" id="RWX-Y1-kgd"/>
                                         </constraints>
                                         <string key="text">No favorite yet ! 
-Add a favorite recipe to see it appear here</string>
+Tap on the favorite recipe button to begin</string>
                                         <fontDescription key="fontDescription" name="Chalkduster" family="Chalkduster" pointSize="17"/>
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
