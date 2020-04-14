@@ -131,7 +131,7 @@
 			isa = PBXGroup;
 			children = (
 				5CBFBFDF23EF0F010095545D /* Support */,
-				5CBFBFD723EF0CD50095545D /* View */,
+				5CBFBFD723EF0CD50095545D /* StoryBoard */,
 				5CBFBFD823EF0D080095545D /* FavoriteRecipesFonctionality */,
 				5C71E34C23C808EB004B7118 /* SearchRecipesFonctionality */,
 				5C71E33323C670FB004B7118 /* Info.plist */,
@@ -197,13 +197,13 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		5CBFBFD723EF0CD50095545D /* View */ = {
+		5CBFBFD723EF0CD50095545D /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
 				5C71E32823C670F9004B7118 /* Main.storyboard */,
 				5C71E33023C670FB004B7118 /* LaunchScreen.storyboard */,
 			);
-			path = View;
+			path = StoryBoard;
 			sourceTree = "<group>";
 		};
 		5CBFBFD823EF0D080095545D /* FavoriteRecipesFonctionality */ = {

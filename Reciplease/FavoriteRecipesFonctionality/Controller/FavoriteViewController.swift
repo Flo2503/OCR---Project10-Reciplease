@@ -56,6 +56,14 @@ class FavoriteViewController: UIViewController {
 // MARK: - Extension allowing to congigure table view and cells details
 extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
 
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            RecipeEntity.deleteBy(url: favoriteRecipes[indexPath.row].url)
+            favoriteRecipes = RecipeEntity.getAll()
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
+    }
+
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         detailRecipe = favoriteRecipes[indexPath.row]
         self.performSegue(withIdentifier: segueIdentifier, sender: self)
