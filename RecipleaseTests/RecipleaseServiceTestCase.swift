@@ -9,7 +9,6 @@
 import XCTest
 import Alamofire
 import Mockingjay
-import SwiftyJSON
 @testable import Reciplease
 /*
 class RecipleaseServiceTestCase: XCTestCase {
