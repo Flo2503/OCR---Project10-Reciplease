@@ -44,11 +44,11 @@
             </objects>
             <point key="canvasLocation" x="-1788" y="-609"/>
         </scene>
-        <!--Favorite-->
+        <!--Navigation Controller-->
         <scene sceneID="hNF-Eq-Hx9">
             <objects>
                 <navigationController id="cxr-aM-5oA" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Favorite" image="star.fill" catalog="system" id="8Zd-cI-DuD"/>
+                    <tabBarItem key="tabBarItem" systemItem="favorites" id="8Zd-cI-DuD"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" barStyle="black" id="gIk-8r-98j">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -242,7 +242,7 @@ Tap on the favorite recipe button to begin</string>
                         <viewLayoutGuide key="safeArea" id="19c-37-k1K"/>
                     </view>
                     <navigationItem key="navigationItem" title="Reciplease" id="2oQ-xh-nUX">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="trash" catalog="system" id="CHn-hq-atx">
+                        <barButtonItem key="rightBarButtonItem" systemItem="trash" id="CHn-hq-atx">
                             <connections>
                                 <action selector="deleteAllFavButton:" destination="AI9-iH-TOE" id="cQk-7m-mtZ"/>
                             </connections>
@@ -431,8 +431,8 @@ Tap on the favorite recipe button to begin</string>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="6zW-xE-1KI">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
-                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="medium" id="w0Q-oO-KKJ">
-                                    <rect key="frame" x="0.0" y="206" width="414" height="44"/>
+                                <activityIndicatorView key="tableFooterView" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="white" id="w0Q-oO-KKJ">
+                                    <rect key="frame" x="0.0" y="206" width="414" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                     <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </activityIndicatorView>
@@ -796,7 +796,5 @@ Tap on the favorite recipe button to begin</string>
         <image name="gradient" width="636" height="833"/>
         <image name="icon_like" width="64" height="64"/>
         <image name="icon_timer" width="64" height="64"/>
-        <image name="star.fill" catalog="system" width="128" height="116"/>
-        <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
 </document>

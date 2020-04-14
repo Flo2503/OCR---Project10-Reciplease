@@ -135,7 +135,6 @@
 				5CBFBFD823EF0D080095545D /* FavoriteRecipesFonctionality */,
 				5C71E34C23C808EB004B7118 /* SearchRecipesFonctionality */,
 				5C71E33323C670FB004B7118 /* Info.plist */,
-				5C779CF524044A070046CDB9 /* Reciplease.xcdatamodeld */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -161,12 +160,13 @@
 			path = SearchRecipesFonctionality;
 			sourceTree = "<group>";
 		};
-		5C9865C323F5DCF1001FDCFA /* Model */ = {
+		5C9865C323F5DCF1001FDCFA /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
 				5C9865C423F5DD23001FDCFA /* RecipeEntity.swift */,
+				5C779CF524044A070046CDB9 /* Reciplease.xcdatamodeld */,
 			);
-			path = Model;
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		5CBFBFD423EF0BBE0095545D /* Controller */ = {
@@ -209,7 +209,7 @@
 		5CBFBFD823EF0D080095545D /* FavoriteRecipesFonctionality */ = {
 			isa = PBXGroup;
 			children = (
-				5C9865C323F5DCF1001FDCFA /* Model */,
+				5C9865C323F5DCF1001FDCFA /* CoreData */,
 				5CBFBFDE23EF0DD00095545D /* View */,
 				5CBFBFD923EF0D2A0095545D /* Controller */,
 			);
