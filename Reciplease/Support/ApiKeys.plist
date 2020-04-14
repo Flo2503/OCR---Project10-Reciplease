@@ -1,14 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<!--
-   Property List.plist
-   Reciplease
-
-   Created by Flo on 13/04/2020.
-   Copyright (c) 2020 Flo. All rights reserved.
--->
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
-    <dict>
-    
-    </dict>
+<dict>
+	<key>app_id</key>
+	<string>f8a5ab80</string>
+	<key>app_key</key>
+	<string>2f197fb8d0d4d4b720ddd00d89523c43</string>
+</dict>
 </plist>

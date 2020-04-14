@@ -7,8 +7,13 @@
 //
 
 import Foundation
-
-class ApiManager {
-    let api = "2f197fb8d0d4d4b720ddd00d89523c43"
-    let appId = "f8a5ab80"
+    
+func keysValue(named keyname: String) -> String {
+    let filePath = Bundle.main.path(forResource: "ApiKeys", ofType: "plist")
+    let plist = NSDictionary(contentsOfFile: filePath!)
+    let value = plist?.object(forKey: keyname) as? String ?? ""
+    return value
 }
+
+
+

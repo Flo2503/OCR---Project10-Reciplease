@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sxg-KK-7bJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Sxg-KK-7bJ">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -165,7 +165,7 @@ Tap on the favorite recipe button to begin</string>
                                                     <rect key="frame" x="0.0" y="100" width="414" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="j3B-N3-xUX">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50.000000000000227"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iZG-vu-sxp">
                                                             <rect key="frame" x="8" y="1" width="398" height="23"/>
@@ -241,7 +241,13 @@ Tap on the favorite recipe button to begin</string>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="19c-37-k1K"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Reciplease" id="2oQ-xh-nUX"/>
+                    <navigationItem key="navigationItem" title="Reciplease" id="2oQ-xh-nUX">
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="trash" catalog="system" id="CHn-hq-atx">
+                            <connections>
+                                <action selector="deleteAllFavButton:" destination="AI9-iH-TOE" id="cQk-7m-mtZ"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="favoriteTableView" destination="7Jx-ZN-cCm" id="Al7-2L-fN9"/>
                         <outlet property="helpView" destination="pD3-GA-IJB" id="zIu-S8-4oC"/>
@@ -503,7 +509,7 @@ Tap on the favorite recipe button to begin</string>
                                                     <rect key="frame" x="0.0" y="100" width="414" height="50"/>
                                                     <subviews>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="9a5-jw-cbm">
-                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50.000000000000227"/>
+                                                            <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="utg-6Q-AHi">
                                                             <rect key="frame" x="8" y="1" width="398" height="23"/>
@@ -704,7 +710,7 @@ Tap on the favorite recipe button to begin</string>
                                 <rect key="frame" x="0.0" y="276" width="414" height="50"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="gradient" translatesAutoresizingMaskIntoConstraints="NO" id="9OW-K7-D87">
-                                        <rect key="frame" x="0.0" y="-10" width="414" height="60.000000000000227"/>
+                                        <rect key="frame" x="0.0" y="-10" width="414" height="60"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="60" id="Puf-j8-PFL"/>
                                         </constraints>
@@ -781,15 +787,16 @@ Tap on the favorite recipe button to begin</string>
             <point key="canvasLocation" x="991" y="-198"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="5oh-8w-Icn"/>
+    </inferredMetricsTieBreakers>
+    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
     <resources>
         <image name="defaultImage" width="2000" height="1000"/>
         <image name="gradient" width="636" height="833"/>
         <image name="icon_like" width="64" height="64"/>
         <image name="icon_timer" width="64" height="64"/>
-        <image name="star.fill" catalog="system" width="64" height="58"/>
+        <image name="star.fill" catalog="system" width="128" height="116"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="5oh-8w-Icn"/>
-    </inferredMetricsTieBreakers>
-    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
 </document>

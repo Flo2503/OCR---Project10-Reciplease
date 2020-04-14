@@ -56,4 +56,14 @@ class RecipeEntity: NSManagedObject {
             }
         }
     }
+
+    static func deleteAll(viewContext: NSManagedObjectContext = AppDelegate.viewContext) {
+        let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
+        request.predicate = NSPredicate(value: true)
+        if let favoriteRecipes = try? viewContext.fetch(request) {
+            for recipe in favoriteRecipes {
+                viewContext.delete(recipe)
+            }
+        }
+    }
 }

@@ -20,6 +20,12 @@ class FavoriteViewController: UIViewController {
     @IBOutlet weak var favoriteTableView: UITableView!
     @IBOutlet weak var helpView: UIView!
 
+    // MARK: - Action
+    @IBAction func deleteAllFavButton(_ sender: Any) {
+        RecipeEntity.deleteAll()
+        favoriteRecipes = RecipeEntity.getAll()
+        favoriteTableView.reloadData()
+    }
     // MARK: - Methods
     override func viewWillAppear(_ animated: Bool) {
         favoriteRecipes = RecipeEntity.getAll()
@@ -41,6 +47,8 @@ class FavoriteViewController: UIViewController {
     private func emptyList() {
         if favoriteRecipes.isEmpty {
             favoriteTableView.backgroundView = helpView
+        } else {
+            favoriteTableView.backgroundView = nil
         }
     }
 }

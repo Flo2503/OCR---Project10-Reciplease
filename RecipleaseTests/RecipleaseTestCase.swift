@@ -49,13 +49,8 @@ class RecipleaseTestCase: XCTestCase {
 
         RecipeEntity.addRecipeToFavorite(recipes: fakeRecipe)
 
-        let recipes = RecipeEntity.getAll()
-
-        if RecipeEntity.getAll().count == 1 {
-            XCTAssertEqual(recipes, [fakeRecipe])
-        } else {
-            XCTAssertNotEqual(recipes, [fakeRecipe])
-        }
-        XCTAssertTrue(RecipeEntity.existBy(url: "urlTestFake"))
+        RecipeEntity.getAll()
+            
+        XCTAssertEqual(recipes, [fakeRecipe])
     }
 }
