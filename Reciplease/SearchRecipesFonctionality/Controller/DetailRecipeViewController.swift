@@ -13,7 +13,6 @@ class DetailRecipeViewController: UIViewController {
 
     // MARK: - Properties, instances
     private let webService = EdanamWebService()
-    private let defaultImage = "defaultImage"
     var recipe: Recipes?
     let defaultValue = " - "
 
@@ -93,17 +92,15 @@ extension DetailRecipeViewController: UITableViewDataSource {
 // MARK: - Extension: get recipe image
 extension DetailRecipeViewController {
      private func getRecipeImage() {
-        guard let urlImage = recipe?.image else {
-            return
-        }
-        webService.getImage(url: (urlImage), callback: { (image) in
-            DispatchQueue.main.async {
-                guard let image = image else {
-                    return self.imageRecipe.image = UIImage(named: self.defaultImage)
+        if let urlImage = recipe?.image {
+            webService.getImage(url: (urlImage), callback: { (image) in
+                DispatchQueue.main.async {
+                    if let image = image {
+                        self.imageRecipe.image = image
+                    }
                 }
-                self.imageRecipe.image = image
-            }
-        })
+            })
+        }
     }
 }
 

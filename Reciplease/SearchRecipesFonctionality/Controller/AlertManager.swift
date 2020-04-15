@@ -20,11 +20,5 @@ extension UIViewController {
         let alertVC = UIAlertController(title: "Your list is empty", message: "Please give me some ingredients !", preferredStyle: .alert)
         alertVC.addAction(UIAlertAction(title: "Got it", style: .cancel, handler: nil))
         present(alertVC, animated: true, completion: nil)
-    }
-
-    func favoriteListIsEmprtyAlert() {
-        let alertVC = UIAlertController(title: "This list is empty", message: "Tap on favorite button up right in the detail ingredients view to save recipe in favorite", preferredStyle: .alert)
-        alertVC.addAction(UIAlertAction(title: "Got it", style: .cancel, handler: nil))
-        present(alertVC, animated: true, completion: nil)
-    }
+    }    
 }

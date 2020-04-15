@@ -12,7 +12,6 @@ class RecipesListViewController: UIViewController {
 
     // MARK: - Properties, instances
     private let segueIdentifier = "segueToDetail"
-    private let defaultImage = "defaultImage"
     private let webService = EdanamWebService()
     var recipes: [Recipes] = []
     var recipe: Recipes?

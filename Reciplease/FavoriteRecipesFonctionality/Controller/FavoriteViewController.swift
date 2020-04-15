@@ -12,7 +12,6 @@ class FavoriteViewController: UIViewController {
     // MARK: - Proprties, instances
     private var favoriteRecipes: [Recipes] = []
     private let webService = EdanamWebService()
-    private let defaultImage = "defaultImage"
     private let segueIdentifier = "segueFromFavToDetail"
     var detailRecipe: Recipes?
 
