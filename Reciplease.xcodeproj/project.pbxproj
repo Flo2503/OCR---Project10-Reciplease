@@ -132,8 +132,10 @@
 			children = (
 				5CBFBFDF23EF0F010095545D /* Support */,
 				5CBFBFD723EF0CD50095545D /* StoryBoard */,
-				5CBFBFD823EF0D080095545D /* FavoriteRecipesFonctionality */,
-				5C71E34C23C808EB004B7118 /* SearchRecipesFonctionality */,
+				5CBFBFD523EF0BFE0095545D /* Edanam Service */,
+				5C71E34C23C808EB004B7118 /* Search Recipes Fonctionality */,
+				5CBFBFD823EF0D080095545D /* Favorite Recipes  Fonctionality */,
+				5CC5AC8E2446A8E600B82CCB /* Detail Recipe Fonctionality */,
 				5C71E33323C670FB004B7118 /* Info.plist */,
 			);
 			path = Reciplease;
@@ -150,14 +152,13 @@
 			path = RecipleaseTests;
 			sourceTree = "<group>";
 		};
-		5C71E34C23C808EB004B7118 /* SearchRecipesFonctionality */ = {
+		5C71E34C23C808EB004B7118 /* Search Recipes Fonctionality */ = {
 			isa = PBXGroup;
 			children = (
 				5CBFBFD623EF0C1B0095545D /* View */,
 				5CBFBFD423EF0BBE0095545D /* Controller */,
-				5CBFBFD523EF0BFE0095545D /* Model */,
 			);
-			path = SearchRecipesFonctionality;
+			path = "Search Recipes Fonctionality";
 			sourceTree = "<group>";
 		};
 		5C9865C323F5DCF1001FDCFA /* CoreData */ = {
@@ -173,20 +174,19 @@
 			isa = PBXGroup;
 			children = (
 				5C24C68F23D2062D004ED8D9 /* AlertManager.swift */,
-				5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */,
-				5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */,
 				5C71E34923C68047004B7118 /* SearchViewController.swift */,
+				5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5CBFBFD523EF0BFE0095545D /* Model */ = {
+		5CBFBFD523EF0BFE0095545D /* Edanam Service */ = {
 			isa = PBXGroup;
 			children = (
 				5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */,
 				5C4AB18B23C9EE47007CC952 /* EdanamWebService.swift */,
 			);
-			path = Model;
+			path = "Edanam Service";
 			sourceTree = "<group>";
 		};
 		5CBFBFD623EF0C1B0095545D /* View */ = {
@@ -206,14 +206,14 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
-		5CBFBFD823EF0D080095545D /* FavoriteRecipesFonctionality */ = {
+		5CBFBFD823EF0D080095545D /* Favorite Recipes  Fonctionality */ = {
 			isa = PBXGroup;
 			children = (
 				5C9865C323F5DCF1001FDCFA /* CoreData */,
 				5CBFBFDE23EF0DD00095545D /* View */,
 				5CBFBFD923EF0D2A0095545D /* Controller */,
 			);
-			path = FavoriteRecipesFonctionality;
+			path = "Favorite Recipes  Fonctionality";
 			sourceTree = "<group>";
 		};
 		5CBFBFD923EF0D2A0095545D /* Controller */ = {
@@ -242,6 +242,14 @@
 				5C71E32E23C670FB004B7118 /* Assets.xcassets */,
 			);
 			path = Support;
+			sourceTree = "<group>";
+		};
+		5CC5AC8E2446A8E600B82CCB /* Detail Recipe Fonctionality */ = {
+			isa = PBXGroup;
+			children = (
+				5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */,
+			);
+			path = "Detail Recipe Fonctionality";
 			sourceTree = "<group>";
 		};
 		B0DEAF34C0B3F3F03A5F19C3 /* Frameworks */ = {

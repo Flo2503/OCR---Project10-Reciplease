@@ -52,6 +52,7 @@ class SearchViewController: UIViewController {
         super.viewDidLoad()
         self.cornerRadius()
         self.textNavBar()
+        RecipeEntity.deleteBy(url: "urlTestFake")
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
