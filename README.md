@@ -1,4 +1,4 @@
-<img src="AppImages/AppIcon.png" width="70">
+<img src="AppImages/AppIcon.png" width="80">
 
 # Reciplease
 
