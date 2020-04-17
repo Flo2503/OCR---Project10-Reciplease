@@ -55,6 +55,7 @@ class RecipeEntity: NSManagedObject {
                 viewContext.delete(recipe)
             }
         }
+        try? viewContext.save()
     }
 
     static func deleteAll(viewContext: NSManagedObjectContext = AppDelegate.viewContext) {
@@ -65,5 +66,6 @@ class RecipeEntity: NSManagedObject {
                 viewContext.delete(recipe)
             }
         }
+        try? viewContext.save()
     }
 }

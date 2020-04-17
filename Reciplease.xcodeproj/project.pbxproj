@@ -134,7 +134,7 @@
 				5CBFBFD723EF0CD50095545D /* StoryBoard */,
 				5CBFBFD523EF0BFE0095545D /* Edanam Service */,
 				5C71E34C23C808EB004B7118 /* Search Recipes Fonctionality */,
-				5CBFBFD823EF0D080095545D /* Favorite Recipes  Fonctionality */,
+				5CBFBFD823EF0D080095545D /* Favorite Recipes Fonctionality */,
 				5CC5AC8E2446A8E600B82CCB /* Detail Recipe Fonctionality */,
 				5C71E33323C670FB004B7118 /* Info.plist */,
 			);
@@ -206,14 +206,14 @@
 			path = StoryBoard;
 			sourceTree = "<group>";
 		};
-		5CBFBFD823EF0D080095545D /* Favorite Recipes  Fonctionality */ = {
+		5CBFBFD823EF0D080095545D /* Favorite Recipes Fonctionality */ = {
 			isa = PBXGroup;
 			children = (
 				5C9865C323F5DCF1001FDCFA /* CoreData */,
 				5CBFBFDE23EF0DD00095545D /* View */,
 				5CBFBFD923EF0D2A0095545D /* Controller */,
 			);
-			path = "Favorite Recipes  Fonctionality";
+			path = "Favorite Recipes Fonctionality";
 			sourceTree = "<group>";
 		};
 		5CBFBFD923EF0D2A0095545D /* Controller */ = {
