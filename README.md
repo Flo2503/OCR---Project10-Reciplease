@@ -3,7 +3,7 @@
 # Reciplease
 
 Welcome in Reciplease !  
-This app will allow you finding recipes with inrgedients you have to hand   
+This app will allow you finding recipes with ingredients you have to hand   
 First thing first, enter the ingredients :  
     
  <img src="AppImages/Ingredients.png" width="150">
