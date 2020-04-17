@@ -1,6 +1,6 @@
 <img src="AppImages/AppIcon.png" width="70">
+# Reciplease
 
-# Reciplease   
 Welcome in Reciplease !  
 This app will allow you finding recipes with inrgedients you have to hand   
 First thing first, enter the ingredients :  
@@ -15,13 +15,15 @@ Tap on the recipe that interests you and Reciplease will display you the ingredi
  
   <img src="AppImages/Details.png" width="150">   
 
-Tap on "Recipe details" to access the recipe website and recipe details !  
+Tap on "Recipe Details" to access the recipe website and recipe details !  
   
   <img src="AppImages/WebSite.png" width="150">   
 
 You'll also save your favorite recipes in... favorites !  
 
   <img src="AppImages/Favorites.png" width="150">
+  
+ ## Enjoy !
 
   
  
