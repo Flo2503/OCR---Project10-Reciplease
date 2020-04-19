@@ -2,8 +2,9 @@
 
 # Reciplease
 
-Welcome in Reciplease !  
-This app will allow you finding recipes with ingredients you have to hand   
+### Welcome in Reciplease !  
+This application allows you to find recipes with the ingredients you have on hand. 
+
 First thing first, enter the ingredients :  
     
  <img src="AppImages/Ingredients.png" width="180">
@@ -24,7 +25,7 @@ You'll also save your favorite recipes in... favorites !
 
   <img src="AppImages/Favorites.png" width="180">
   
- ## Enjoy !
+ ### Enjoy !
 
   
  
