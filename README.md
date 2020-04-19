@@ -21,7 +21,7 @@ Tap on "Recipe Details" to access the recipe website and recipe details :
   
   <img src="AppImages/WebSite.png" width="180">   
 
-You'll can also save your favorite recipes in... the "Favorites" section :    
+You'll can also save your favorite recipes in... the "Favorite" section :    
 
   <img src="AppImages/Favorites.png" width="180">
   
