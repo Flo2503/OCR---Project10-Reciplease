@@ -28,7 +28,7 @@ You'll can also save your favorite recipes in... the "Favorite" section :
 
   <img src="AppImages/Favorites.png" width="180">
   
- ### Enjoy !
+ # Enjoy !
 
   
  
