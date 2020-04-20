@@ -13,7 +13,7 @@
 		5C24C69023D2062D004ED8D9 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68F23D2062D004ED8D9 /* AlertManager.swift */; };
 		5C24C69323E380BF004ED8D9 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */; };
 		5C24C69723E5E109004ED8D9 /* RecipesTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C69623E5E109004ED8D9 /* RecipesTableViewCell.swift */; };
-		5C4AB18C23C9EE47007CC952 /* EdanamWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB18B23C9EE47007CC952 /* EdanamWebService.swift */; };
+		5C4AB18C23C9EE47007CC952 /* EdamamWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB18B23C9EE47007CC952 /* EdamamWebService.swift */; };
 		5C4AB19023CB756D007CC952 /* EdamamRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */; };
 		5C4AB19223CBB5F2007CC952 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB19123CBB5F2007CC952 /* ApiManager.swift */; };
 		5C552F9A243CA4AD0031A44C /* FakeRecipe.json in Resources */ = {isa = PBXBuildFile; fileRef = 5C552F99243CA4AD0031A44C /* FakeRecipe.json */; };
@@ -49,7 +49,7 @@
 		5C24C68F23D2062D004ED8D9 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
 		5C24C69623E5E109004ED8D9 /* RecipesTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesTableViewCell.swift; sourceTree = "<group>"; };
-		5C4AB18B23C9EE47007CC952 /* EdanamWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdanamWebService.swift; sourceTree = "<group>"; };
+		5C4AB18B23C9EE47007CC952 /* EdamamWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamWebService.swift; sourceTree = "<group>"; };
 		5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipes.swift; sourceTree = "<group>"; };
 		5C4AB19123CBB5F2007CC952 /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		5C552F99243CA4AD0031A44C /* FakeRecipe.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = FakeRecipe.json; sourceTree = "<group>"; };
@@ -130,13 +130,13 @@
 		5C71E32123C670F9004B7118 /* Reciplease */ = {
 			isa = PBXGroup;
 			children = (
+				5C71E33323C670FB004B7118 /* Info.plist */,
 				5CBFBFDF23EF0F010095545D /* Support */,
 				5CBFBFD723EF0CD50095545D /* StoryBoard */,
-				5CBFBFD523EF0BFE0095545D /* Edanam Service */,
+				5CBFBFD523EF0BFE0095545D /* Edamam Service */,
 				5C71E34C23C808EB004B7118 /* Search Recipes Fonctionality */,
 				5CBFBFD823EF0D080095545D /* Favorite Recipes Fonctionality */,
 				5CC5AC8E2446A8E600B82CCB /* Detail Recipe Fonctionality */,
-				5C71E33323C670FB004B7118 /* Info.plist */,
 			);
 			path = Reciplease;
 			sourceTree = "<group>";
@@ -180,13 +180,13 @@
 			path = Controller;
 			sourceTree = "<group>";
 		};
-		5CBFBFD523EF0BFE0095545D /* Edanam Service */ = {
+		5CBFBFD523EF0BFE0095545D /* Edamam Service */ = {
 			isa = PBXGroup;
 			children = (
 				5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */,
-				5C4AB18B23C9EE47007CC952 /* EdanamWebService.swift */,
+				5C4AB18B23C9EE47007CC952 /* EdamamWebService.swift */,
 			);
-			path = "Edanam Service";
+			path = "Edamam Service";
 			sourceTree = "<group>";
 		};
 		5CBFBFD623EF0C1B0095545D /* View */ = {
@@ -468,7 +468,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5C24C69323E380BF004ED8D9 /* DetailRecipeViewController.swift in Sources */,
-				5C4AB18C23C9EE47007CC952 /* EdanamWebService.swift in Sources */,
+				5C4AB18C23C9EE47007CC952 /* EdamamWebService.swift in Sources */,
 				5C71E32323C670F9004B7118 /* AppDelegate.swift in Sources */,
 				5C779CF724044A070046CDB9 /* Reciplease.xcdatamodeld in Sources */,
 				5C71E34A23C68047004B7118 /* SearchViewController.swift in Sources */,

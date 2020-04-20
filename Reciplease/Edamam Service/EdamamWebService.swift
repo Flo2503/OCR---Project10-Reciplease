@@ -9,7 +9,7 @@
 import Foundation
 import Alamofire
 
-class EdanamWebService {
+class EdamamWebService {
 
     private let appID = keysValue(named: "app_id")
     private let appKey = keysValue(named: "app_key")
@@ -17,11 +17,8 @@ class EdanamWebService {
 /// Network call to get recipes. In parameter : Ingredients list from user. Callback returns Bool for success and Recipes object
     func getData(for ingredients: [String], callback: @escaping (Bool, [Recipes]?) -> Void) {
         let stringIngredientsRepresentation = ingredients.joined(separator: ",")
-        let param = ["app_key": appKey,
-                     "app_id": appID,
-                     "q": stringIngredientsRepresentation]
-        AF.request("https://api.edamam.com/search",
-                   method: .get, parameters: param).validate().responseJSON { response in
+        let param = ["app_key": appKey, "app_id": appID, "q": stringIngredientsRepresentation]
+        AF.request("https://api.edamam.com/search", method: .get, parameters: param).validate().responseJSON { response in
             guard let data = response.data else {
                 return
             }

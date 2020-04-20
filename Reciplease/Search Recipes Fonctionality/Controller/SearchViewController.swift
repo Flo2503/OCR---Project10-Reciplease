@@ -10,7 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
 
     // MARK: - Peoperites, instances
-    private let searchWebService = EdanamWebService()
+    private let searchWebService = EdamamWebService()
     private let segueIdentifier = "segueToRecipes"
     var ingredientsList: [String] = []
 

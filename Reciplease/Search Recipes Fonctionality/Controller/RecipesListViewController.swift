@@ -12,7 +12,7 @@ class RecipesListViewController: UIViewController {
 
     // MARK: - Properties, instances
     private let segueIdentifier = "segueToDetail"
-    private let webService = EdanamWebService()
+    private let webService = EdamamWebService()
     var recipes: [Recipes] = []
     var recipe: Recipes?
     var ingredientsList: [String] = []

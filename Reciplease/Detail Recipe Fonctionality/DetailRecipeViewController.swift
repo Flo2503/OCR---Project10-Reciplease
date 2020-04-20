@@ -12,7 +12,7 @@ import Alamofire
 class DetailRecipeViewController: UIViewController {
 
     // MARK: - Properties, instances
-    private let webService = EdanamWebService()
+    private let webService = EdamamWebService()
     var recipe: Recipes?
     let defaultValue = " - "
 
