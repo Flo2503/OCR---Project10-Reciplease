@@ -52,7 +52,7 @@ class RecipleaseServiceTestCase: XCTestCase {
         }
     }
 
-    func testGetConvertShouldPostFailedCallbackIfError()() {
+    func testGetConvertShouldPostFailedCallbackIfError() {
         stub(everything, http(404))
         let expectation = XCTestExpectation(description: "Alamofire")
         webService.getData(for: ingredients, callback: { (succes, recipes) in
