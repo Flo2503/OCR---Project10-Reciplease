@@ -19,7 +19,7 @@ Tap on the recipe that interests you and Reciplease will display the ingredients
   <img src="AppImages/Details1.png" width="180">   
 
 ## Get Directions 
-Tap on "Recipe Details" to access the recipe website and recipe details :    
+Tap on "Get directions" to access the recipe website and recipe details :    
   
   <img src="AppImages/WebSite.png" width="180">   
 
