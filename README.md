@@ -16,7 +16,7 @@ Tap on "Search for recipes" and Reciplease will display a list of recipes :
 ## Details 
 Tap on the recipe that interests you and Reciplease will display the ingredients and quantity you'll need :  
  
-  <img src="AppImages/Details.png" width="180">   
+  <img src="AppImages/Details1.png" width="180">   
 
 ## Get Directions 
 Tap on "Recipe Details" to access the recipe website and recipe details :    
