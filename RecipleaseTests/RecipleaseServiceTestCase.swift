@@ -54,12 +54,9 @@ class RecipleaseServiceTestCase: XCTestCase {
 
     func testGetConvertShouldPostFailedCallbackIfError() {
         stub(everything, http(404))
-        let expectation = XCTestExpectation(description: "Alamofire")
         webService.getData(for: ingredients, callback: { (succes, recipes) in
             XCTAssertNil(recipes)
             XCTAssertFalse(succes)
-            expectation.fulfill()
         })
-        wait(for: [expectation], timeout: 0.01)
     }
 }
