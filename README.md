@@ -9,6 +9,7 @@
 
 * Data persistence using **Core data**
 
+# Why Use Reciplease ?
 **This application allows you to find recipes with the ingredients you have on hand**.  
 
 ## Ingredients 
