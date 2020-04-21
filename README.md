@@ -2,7 +2,7 @@
 
 # Reciplease
 
-## Acquired skills
+## Tools
 * Add libraries to Xcode project using **Cocoa Pods** :
   * __Alamofire__ for network call
   * __Mockinjay__ stubbing network for unit tests
