@@ -4,7 +4,7 @@
 This application allows you to find recipes with the ingredients you have on hand. 
 
 ## Acquired skills :  
-* Add libraries to Xcode project using **Cocoa Pods** :
+* Add libraries to Xcode project using **Cocoa Pods**
   * __Alamofire__ for network call
   * __Mockinjay__ stubbing network for unit tests
 
