@@ -48,7 +48,7 @@ class SearchViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         config.cornerRadius([addButton, clearButton, searchButton])
-        config.textNavBar()
+        textNavBar()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -74,6 +74,12 @@ class SearchViewController: UIViewController {
             ingredientsTableView.reloadData()
             addIngredientTextField.text = ""
         }
+    }
+
+    private func textNavBar() {
+        navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.white,
+         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }
 

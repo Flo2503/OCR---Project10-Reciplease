@@ -10,6 +10,7 @@ import UIKit
 
 class UniverselTableViewCell: UITableViewCell {
 
+    // MARK: - Instance
     private let webService = EdamamWebService()
 
     // MARK: - Outlets

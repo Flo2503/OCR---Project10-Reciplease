@@ -165,7 +165,9 @@
 		5C71E34C23C808EB004B7118 /* Search Recipes Fonctionality */ = {
 			isa = PBXGroup;
 			children = (
-				5CBFBFD423EF0BBE0095545D /* Controller */,
+				5C24C68F23D2062D004ED8D9 /* AlertManager.swift */,
+				5C71E34923C68047004B7118 /* SearchViewController.swift */,
+				5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */,
 			);
 			path = "Search Recipes Fonctionality";
 			sourceTree = "<group>";
@@ -179,20 +181,9 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
-		5CBFBFD423EF0BBE0095545D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5C24C68F23D2062D004ED8D9 /* AlertManager.swift */,
-				5C71E34923C68047004B7118 /* SearchViewController.swift */,
-				5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		5CBFBFD523EF0BFE0095545D /* Edamam Service */ = {
 			isa = PBXGroup;
 			children = (
-				5C4AB19123CBB5F2007CC952 /* ApiManager.swift */,
 				5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */,
 				5C4AB18B23C9EE47007CC952 /* EdamamWebService.swift */,
 			);
@@ -211,23 +202,16 @@
 		5CBFBFD823EF0D080095545D /* Favorite Recipes Fonctionality */ = {
 			isa = PBXGroup;
 			children = (
+				5CBFBFDB23EF0D820095545D /* FavoriteViewController.swift */,
 				5C9865C323F5DCF1001FDCFA /* CoreData */,
-				5CBFBFD923EF0D2A0095545D /* Controller */,
 			);
 			path = "Favorite Recipes Fonctionality";
-			sourceTree = "<group>";
-		};
-		5CBFBFD923EF0D2A0095545D /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				5CBFBFDB23EF0D820095545D /* FavoriteViewController.swift */,
-			);
-			path = Controller;
 			sourceTree = "<group>";
 		};
 		5CBFBFDF23EF0F010095545D /* Support */ = {
 			isa = PBXGroup;
 			children = (
+				5C4AB19123CBB5F2007CC952 /* ApiManager.swift */,
 				5C71E32223C670F9004B7118 /* AppDelegate.swift */,
 				5C71E32423C670F9004B7118 /* SceneDelegate.swift */,
 				5CF24C1924505CFD00077B33 /* ApiKeys.plist */,

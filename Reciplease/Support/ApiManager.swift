@@ -14,3 +14,5 @@ func keysValue(named keyname: String) -> String {
     let value = plist?.object(forKey: keyname) as? String ?? ""
     return value
 }
+
+    

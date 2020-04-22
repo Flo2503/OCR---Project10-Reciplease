@@ -43,7 +43,7 @@ class DetailRecipeViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         config.cornerRadius([getDirectionsButton])
-        config.textNavBar()
+        textNavBar()
         displayDetails()
         smallViewConfig()
         ingredientsDetail.reloadData()
@@ -141,5 +141,11 @@ extension DetailRecipeViewController {
             totalTimeLabel.text = defaultValue
             recipeName.text = defaultValue
         }
+    }
+
+    private func textNavBar() {
+        navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.white,
+         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }

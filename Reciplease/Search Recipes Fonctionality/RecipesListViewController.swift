@@ -13,7 +13,6 @@ class RecipesListViewController: UIViewController {
     // MARK: - Properties, instances
     private let segueIdentifier = "segueToDetail"
     private let webService = EdamamWebService()
-    private let config = ThemeConfig()
     var recipes: [Recipes] = []
     var recipe: Recipes?
     var ingredientsList: [String] = []
@@ -26,7 +25,7 @@ class RecipesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getRecipes()
-            config.textNavBar()
+        textNavBar()
      }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -56,6 +55,12 @@ class RecipesListViewController: UIViewController {
             self.activityIndicator.isHidden = !shown
         }
     }
+
+    private func textNavBar() {
+        navigationController?.navigationBar.titleTextAttributes =
+        [NSAttributedString.Key.foregroundColor: UIColor.white,
+         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
+    }
 }
 
 // MARK: - Extension allowing to congigure table view and cells details
@@ -81,7 +86,10 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
 
         cell.imageForCells(url: (recipes[indexPath.row].image))
 
-        cell.configure(title: (recipes[indexPath.row].label), subtitle: (recipes[indexPath.row].ingredientLines.joined(separator: ", ")), likes: (recipes[indexPath.row].yield), totaTime: (recipes[indexPath.row].totalTime))
+        cell.configure(title: (recipes[indexPath.row].label),
+                       subtitle: (recipes[indexPath.row].ingredientLines.joined(separator: ", ")),
+                       likes: (recipes[indexPath.row].yield),
+                       totaTime: (recipes[indexPath.row].totalTime))
 
         return cell
     }

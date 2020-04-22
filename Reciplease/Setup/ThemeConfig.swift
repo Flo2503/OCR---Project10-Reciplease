@@ -9,17 +9,10 @@
 import Foundation
 import UIKit
 
-class ThemeConfig: UIViewController {
-
+class ThemeConfig {
     func cornerRadius(_ buttons: [UIButton]) {
         for element in buttons {
             element.layer.cornerRadius = 20
         }
-    }
-
-    func textNavBar() {
-        navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.foregroundColor: UIColor.white,
-         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }
