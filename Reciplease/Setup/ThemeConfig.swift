@@ -18,7 +18,7 @@ class ThemeConfig: UIViewController {
     }
 
     func textNavBar() {
-        self.navigationController?.navigationBar.titleTextAttributes =
+        navigationController?.navigationBar.titleTextAttributes =
         [NSAttributedString.Key.foregroundColor: UIColor.white,
          NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }

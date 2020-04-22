@@ -10,6 +10,8 @@ import UIKit
 
 class UniverselTableViewCell: UITableViewCell {
 
+    private let webService = EdamamWebService()
+
     // MARK: - Outlets
     @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var totalTimeCell: UILabel!
@@ -35,6 +37,16 @@ class UniverselTableViewCell: UITableViewCell {
     //// Allow to display image in cels
     func configureImage(image: UIImage) {
         imageCell.image = image
+    }
+
+    func imageForCells(url: String) {
+        webService.getImage(url: url, callback: { (image) in
+            DispatchQueue.main.async {
+                if let image = image {
+                    self.configureImage(image: image)
+                }
+            }
+        })
     }
 
     private func setUp() {

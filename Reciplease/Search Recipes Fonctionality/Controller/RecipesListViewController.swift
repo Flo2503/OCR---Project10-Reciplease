@@ -13,6 +13,7 @@ class RecipesListViewController: UIViewController {
     // MARK: - Properties, instances
     private let segueIdentifier = "segueToDetail"
     private let webService = EdamamWebService()
+    private let config = ThemeConfig()
     var recipes: [Recipes] = []
     var recipe: Recipes?
     var ingredientsList: [String] = []
@@ -25,6 +26,7 @@ class RecipesListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getRecipes()
+            config.textNavBar()
      }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -77,25 +79,10 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
         return UITableViewCell()
     }
 
-        webService.getImage(url: (recipes[indexPath.row].image), callback: { (image) in
-            DispatchQueue.main.async {
-                if let image = image {
-                    cell.configureImage(image: image)
-                }
-            }
-        })
+        cell.imageForCells(url: (recipes[indexPath.row].image))
 
         cell.configure(title: (recipes[indexPath.row].label), subtitle: (recipes[indexPath.row].ingredientLines.joined(separator: ", ")), likes: (recipes[indexPath.row].yield), totaTime: (recipes[indexPath.row].totalTime))
 
         return cell
-    }
-}
-
-extension RecipesListViewController {
-
-    private func textNavBar() {
-        self.navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.foregroundColor: UIColor.white,
-         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }

@@ -24,11 +24,7 @@ class SearchViewController: UIViewController {
 
     // MARK: - Actions
     @IBAction func addIngredient(_ sender: Any) {
-        if let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty {
-            add(ingredient: name)
-            ingredientsTableView.reloadData()
-            addIngredientTextField.text = ""
-        }
+        ingredientsListManager()
     }
 
     @IBAction func dismissKeyboard(_ sender: Any) {
@@ -69,6 +65,16 @@ class SearchViewController: UIViewController {
     private func add(ingredient: String) {
         ingredientsList.append(ingredient)
     }
+
+    private func ingredientsListManager() {
+        if let name = addIngredientTextField.text?.trimmingCharacters(
+            in: .whitespacesAndNewlines).trimmingCharacters(
+                in: .punctuationCharacters), !name.isEmpty {
+            add(ingredient: name)
+            ingredientsTableView.reloadData()
+            addIngredientTextField.text = ""
+        }
+    }
 }
 
 // MARK: - Extension  allowing to congigure table view and cells details
@@ -99,16 +105,12 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
     }
 }
 
-// MARK: - Extension set up diplay
+// MARK: - Extension set up display
 extension SearchViewController: UITextFieldDelegate {
 
     internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addIngredientTextField.resignFirstResponder()
-        if let name = addIngredientTextField.text?.trimmingCharacters(in: .whitespacesAndNewlines).trimmingCharacters(in: .punctuationCharacters), !name.isEmpty {
-            add(ingredient: name)
-            ingredientsTableView.reloadData()
-            addIngredientTextField.text = ""
-        }
+        ingredientsListManager()
         return true
     }
 }

@@ -82,13 +82,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
             return UITableViewCell()
         }
 
-        webService.getImage(url: (favoriteRecipes[indexPath.row].image), callback: { (image) in
-            DispatchQueue.main.async {
-                if let image = image {
-                    cell.configureImage(image: image)
-                }
-            }
-        })
+        cell.imageForCells(url: (favoriteRecipes[indexPath.row].image))
 
         cell.configure(title: favoriteRecipes[indexPath.row].label, subtitle: favoriteRecipes[indexPath.row].ingredientLines.joined(separator: ", "), likes: favoriteRecipes[indexPath.row].yield, totaTime: favoriteRecipes[indexPath.row].totalTime)
 
