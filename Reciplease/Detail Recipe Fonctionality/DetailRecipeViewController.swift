@@ -13,6 +13,7 @@ class DetailRecipeViewController: UIViewController {
 
     // MARK: - Properties, instances
     private let webService = EdamamWebService()
+    private let config = ThemeConfig()
     var recipe: Recipes?
     let defaultValue = " - "
 
@@ -41,8 +42,12 @@ class DetailRecipeViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
+        config.cornerRadius([getDirectionsButton])
+        config.textNavBar()
+        displayDetails()
+        smallViewConfig()
         ingredientsDetail.reloadData()
-        setUp()
+        backButton()
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -106,23 +111,10 @@ extension DetailRecipeViewController {
 
 // MARK: - Extension: set up diplay
 extension DetailRecipeViewController {
-    private func setUp() {
+    private func backButton() {
         let backItem = UIBarButtonItem()
         backItem.title = "Back"
         navigationItem.backBarButtonItem = backItem
-        getDirectionsButton.layer.cornerRadius = 20
-        self.infoView.layer.cornerRadius = 7
-        self.infoView.layer.borderWidth = 2
-        self.infoView.layer.borderColor = UIColor(red: 222/255, green: 225/255, blue: 227/255, alpha: 1).cgColor
-        if let likes = recipe?.yield, let totalTime = recipe?.totalTime, let name = recipe?.label {
-            likesLabel.text = "\(String(likes))"
-            totalTimeLabel.text = "\(String(totalTime))m"
-            recipeName.text = name
-        } else {
-            likesLabel.text = defaultValue
-            totalTimeLabel.text = defaultValue
-            recipeName.text = defaultValue
-        }
     }
 
     private func buttonSetUp() {
@@ -133,9 +125,21 @@ extension DetailRecipeViewController {
         }
     }
 
-    private func textNavBar() {
-        self.navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.foregroundColor: UIColor.white,
-         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
+    private func smallViewConfig() {
+        self.infoView.layer.cornerRadius = 7
+        self.infoView.layer.borderWidth = 2
+        self.infoView.layer.borderColor = UIColor(red: 222/255, green: 225/255, blue: 227/255, alpha: 1).cgColor
+    }
+
+    private func displayDetails() {
+        if let likes = recipe?.yield, let totalTime = recipe?.totalTime, let name = recipe?.label {
+            likesLabel.text = "\(String(likes))"
+            totalTimeLabel.text = "\(String(totalTime))m"
+            recipeName.text = name
+        } else {
+            likesLabel.text = defaultValue
+            totalTimeLabel.text = defaultValue
+            recipeName.text = defaultValue
+        }
     }
 }

@@ -59,5 +59,4 @@ class RecipleaseServiceTestCase: XCTestCase {
             XCTAssertFalse(succes)
         })
     }
-    
 }

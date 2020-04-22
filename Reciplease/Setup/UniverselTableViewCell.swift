@@ -1,40 +1,40 @@
 //
-//  FavoriteTableViewCell.swift
+//  RecipesTableViewCell.swift
 //  Reciplease
 //
-//  Created by Flo on 08/02/2020.
+//  Created by Flo on 01/02/2020.
 //  Copyright © 2020 Flo. All rights reserved.
 //
 
 import UIKit
 
-class FavoriteTableViewCell: UITableViewCell {
+class UniverselTableViewCell: UITableViewCell {
 
-    // MARK: - Oulets
+    // MARK: - Outlets
     @IBOutlet weak var infoView: UIView!
-    @IBOutlet weak var totalTimeFavoriteCell: UILabel!
-    @IBOutlet weak var likesFavoriteCell: UILabel!
-    @IBOutlet weak var titleFavoriteCell: UILabel!
-    @IBOutlet weak var subtitleFavoriteCell: UILabel!
-    @IBOutlet weak var imageFavoriteCell: UIImageView!
+    @IBOutlet weak var totalTimeCell: UILabel!
+    @IBOutlet weak var likesCell: UILabel!
+    @IBOutlet weak var titleCell: UILabel!
+    @IBOutlet weak var subtitleCell: UILabel!
+    @IBOutlet weak var imageCell: UIImageView!
 
+    // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
         setUp()
     }
 
-    // MARK: - Methods
     /// Allow tio diplay information in cells
     func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
-        titleFavoriteCell.text = title
-        subtitleFavoriteCell.text = subtitle
-        totalTimeFavoriteCell.text = "\(String(totaTime))m"
-        likesFavoriteCell.text = "\(String(likes))"
+        titleCell.text = title
+        subtitleCell.text = subtitle
+        totalTimeCell.text = "\(String(totaTime))m"
+        likesCell.text = "\(String(likes))"
     }
 
     //// Allow to display image in cels
     func configureImage(image: UIImage) {
-        imageFavoriteCell.image = image
+        imageCell.image = image
     }
 
     private func setUp() {

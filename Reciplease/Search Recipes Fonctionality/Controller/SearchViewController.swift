@@ -10,6 +10,7 @@ import UIKit
 class SearchViewController: UIViewController {
 
     // MARK: - Peoperites, instances
+    private let config = ThemeConfig()
     private let searchWebService = EdamamWebService()
     private let segueIdentifier = "segueToRecipes"
     var ingredientsList: [String] = []
@@ -50,8 +51,8 @@ class SearchViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.cornerRadius()
-        self.textNavBar()
+        config.cornerRadius([addButton, clearButton, searchButton])
+        config.textNavBar()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -100,17 +101,6 @@ extension SearchViewController: UITableViewDataSource, UITableViewDelegate {
 
 // MARK: - Extension set up diplay
 extension SearchViewController: UITextFieldDelegate {
-    private func cornerRadius() {
-        clearButton.layer.cornerRadius = 20
-        searchButton.layer.cornerRadius = 20
-        addButton.layer.cornerRadius = 20
-    }
-
-    private func textNavBar() {
-        self.navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.foregroundColor: UIColor.white,
-         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
-    }
 
     internal func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         addIngredientTextField.resignFirstResponder()

@@ -95,7 +95,7 @@ Tap on the favorite recipe button to begin</string>
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
                                 <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="150" id="ZYg-7x-P6F" customClass="FavoriteTableViewCell" customModule="Reciplease" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FavoriteCell" rowHeight="150" id="ZYg-7x-P6F" customClass="UniverselTableViewCell" customModule="Reciplease" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZYg-7x-P6F" id="sW4-IH-Bvc">
@@ -213,12 +213,12 @@ Tap on the favorite recipe button to begin</string>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" red="0.34117645029999999" green="0.34117645029999999" blue="0.34117645029999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
-                                            <outlet property="imageFavoriteCell" destination="E9p-yW-S2F" id="2be-Oi-436"/>
+                                            <outlet property="imageCell" destination="E9p-yW-S2F" id="eaf-Mk-YUp"/>
                                             <outlet property="infoView" destination="lo7-jl-dEs" id="zsx-ce-A9L"/>
-                                            <outlet property="likesFavoriteCell" destination="IJn-78-qeW" id="9ki-j7-sbU"/>
-                                            <outlet property="subtitleFavoriteCell" destination="WVc-24-1Yi" id="0Da-Qf-jpF"/>
-                                            <outlet property="titleFavoriteCell" destination="iZG-vu-sxp" id="nMN-be-ziM"/>
-                                            <outlet property="totalTimeFavoriteCell" destination="Ao0-ow-oYp" id="bYO-ve-RQv"/>
+                                            <outlet property="likesCell" destination="IJn-78-qeW" id="w3u-Ej-QRC"/>
+                                            <outlet property="subtitleCell" destination="WVc-24-1Yi" id="BG0-B3-ijw"/>
+                                            <outlet property="titleCell" destination="iZG-vu-sxp" id="ENx-7p-NIk"/>
+                                            <outlet property="totalTimeCell" destination="Ao0-ow-oYp" id="lkO-cg-3ps"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -437,7 +437,7 @@ Tap on the favorite recipe button to begin</string>
                                     <color key="color" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </activityIndicatorView>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipesCell" rowHeight="150" id="PUk-VB-AdV" customClass="RecipesTableViewCell" customModule="Reciplease" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="RecipesCell" rowHeight="150" id="PUk-VB-AdV" customClass="UniverselTableViewCell" customModule="Reciplease" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="150"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="PUk-VB-AdV" id="e8O-ZB-e5R">
@@ -553,12 +553,12 @@ Tap on the favorite recipe button to begin</string>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <outlet property="imageRecipesCell" destination="f1q-zT-i0G" id="e9h-uh-Osp"/>
+                                            <outlet property="imageCell" destination="f1q-zT-i0G" id="e9h-uh-Osp"/>
                                             <outlet property="infoView" destination="OOb-eE-JRV" id="nOq-qO-EJp"/>
-                                            <outlet property="likesRecipesCell" destination="fia-df-UXd" id="FvG-Dg-I0H"/>
-                                            <outlet property="subtitleRecipesCell" destination="x25-no-39r" id="eie-HZ-5BW"/>
-                                            <outlet property="titleRecipesCell" destination="utg-6Q-AHi" id="xdZ-uH-nvt"/>
-                                            <outlet property="totalTimeRecipesCell" destination="jZM-dO-gRS" id="Zcx-Vu-rVh"/>
+                                            <outlet property="likesCell" destination="fia-df-UXd" id="FvG-Dg-I0H"/>
+                                            <outlet property="subtitleCell" destination="x25-no-39r" id="eie-HZ-5BW"/>
+                                            <outlet property="titleCell" destination="utg-6Q-AHi" id="xdZ-uH-nvt"/>
+                                            <outlet property="totalTimeCell" destination="jZM-dO-gRS" id="Zcx-Vu-rVh"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
