@@ -32,7 +32,7 @@ class RecipleaseServiceTestCase: XCTestCase {
                             "4 slices bakery whole grain bread"],
                             totalTime: 60)]
 
-    func testGetConvertShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
+    func testGetDataShouldPostSuccessCallbackIfNoErrorAndCorrectData() {
         if let path = Bundle.main.path(forResource: "FakeRecipe", ofType: "json") {
             do {
                 let data = try Data(contentsOf: URL(fileURLWithPath: path), options: .mappedIfSafe)
@@ -47,16 +47,17 @@ class RecipleaseServiceTestCase: XCTestCase {
                 })
                 wait(for: [expectation], timeout: 0.01)
               } catch {
-                   XCTAssertTrue(false, "Could no read json from file FakeRecipe.json")
+                   XCTAssertTrue(false, "Could not read json from file FakeRecipe.json")
               }
         }
     }
 
-    func testGetConvertShouldPostFailedCallbackIfError() {
+    func testGetDataShouldPostFailedCallbackIfError() {
         stub(everything, http(404))
         webService.getData(for: ingredients, callback: { (succes, recipes) in
             XCTAssertNil(recipes)
             XCTAssertFalse(succes)
         })
     }
+    
 }
