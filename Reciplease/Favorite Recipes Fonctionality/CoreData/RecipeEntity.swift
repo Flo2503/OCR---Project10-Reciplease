@@ -58,6 +58,7 @@ class RecipeEntity: NSManagedObject {
         try? viewContext.save()
     }
 
+    /// Allow to delete all datas. Use url in parameters to call the right datas
     static func deleteAll(viewContext: NSManagedObjectContext = AppDelegate.viewContext) {
         let request: NSFetchRequest<RecipeEntity> = RecipeEntity.fetchRequest()
         request.predicate = NSPredicate(value: true)
