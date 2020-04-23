@@ -8,7 +8,7 @@
 
 import UIKit
 
-class UniverselTableViewCell: UITableViewCell {
+class SetUpCells: UITableViewCell {
 
     // MARK: - Instance
     private let webService = EdamamWebService()
@@ -24,10 +24,15 @@ class UniverselTableViewCell: UITableViewCell {
     // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        setUp()
+        ThemeConfig.setUpInfoView(view: infoView)
     }
 
-    /// Allow tio diplay information in cells
+    //// Allow to display image in cels
+    private func configureImage(image: UIImage) {
+        imageCell.image = image
+    }
+
+    /// Allow to display information in cells
     func configure(title: String, subtitle: String, likes: Int, totaTime: Int) {
         titleCell.text = title
         subtitleCell.text = subtitle
@@ -35,11 +40,7 @@ class UniverselTableViewCell: UITableViewCell {
         likesCell.text = "\(String(likes))"
     }
 
-    //// Allow to display image in cels
-    func configureImage(image: UIImage) {
-        imageCell.image = image
-    }
-
+    /// Network call to load image for cells
     func imageForCells(url: String) {
         webService.getImage(url: url, callback: { (image) in
             DispatchQueue.main.async {
@@ -48,11 +49,5 @@ class UniverselTableViewCell: UITableViewCell {
                 }
             }
         })
-    }
-
-    private func setUp() {
-        self.infoView.layer.cornerRadius = 7
-        self.infoView.layer.borderWidth = 2
-        self.infoView.layer.borderColor = UIColor(red: 222/255, green: 225/255, blue: 227/255, alpha: 1).cgColor
     }
 }

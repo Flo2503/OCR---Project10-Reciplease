@@ -11,7 +11,7 @@
 		5C24C68C23CFB194004ED8D9 /* RecipesListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */; };
 		5C24C69023D2062D004ED8D9 /* AlertManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C68F23D2062D004ED8D9 /* AlertManager.swift */; };
 		5C24C69323E380BF004ED8D9 /* DetailRecipeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */; };
-		5C24C69723E5E109004ED8D9 /* UniverselTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C69623E5E109004ED8D9 /* UniverselTableViewCell.swift */; };
+		5C24C69723E5E109004ED8D9 /* SetUpCells.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C24C69623E5E109004ED8D9 /* SetUpCells.swift */; };
 		5C343E83245044E200E1613A /* ThemeConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C343E82245044E200E1613A /* ThemeConfig.swift */; };
 		5C4AB18C23C9EE47007CC952 /* EdamamWebService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB18B23C9EE47007CC952 /* EdamamWebService.swift */; };
 		5C4AB19023CB756D007CC952 /* EdamamRecipes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */; };
@@ -47,7 +47,7 @@
 		5C24C68B23CFB194004ED8D9 /* RecipesListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesListViewController.swift; sourceTree = "<group>"; };
 		5C24C68F23D2062D004ED8D9 /* AlertManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertManager.swift; sourceTree = "<group>"; };
 		5C24C69223E380BF004ED8D9 /* DetailRecipeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailRecipeViewController.swift; sourceTree = "<group>"; };
-		5C24C69623E5E109004ED8D9 /* UniverselTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UniverselTableViewCell.swift; sourceTree = "<group>"; };
+		5C24C69623E5E109004ED8D9 /* SetUpCells.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetUpCells.swift; sourceTree = "<group>"; };
 		5C343E82245044E200E1613A /* ThemeConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeConfig.swift; sourceTree = "<group>"; };
 		5C4AB18B23C9EE47007CC952 /* EdamamWebService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamWebService.swift; sourceTree = "<group>"; };
 		5C4AB18F23CB756D007CC952 /* EdamamRecipes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EdamamRecipes.swift; sourceTree = "<group>"; };
@@ -111,7 +111,7 @@
 			isa = PBXGroup;
 			children = (
 				5C343E82245044E200E1613A /* ThemeConfig.swift */,
-				5C24C69623E5E109004ED8D9 /* UniverselTableViewCell.swift */,
+				5C24C69623E5E109004ED8D9 /* SetUpCells.swift */,
 			);
 			path = Setup;
 			sourceTree = "<group>";
@@ -456,7 +456,7 @@
 				5C24C69023D2062D004ED8D9 /* AlertManager.swift in Sources */,
 				5CBFBFDC23EF0D820095545D /* FavoriteViewController.swift in Sources */,
 				5C9865C523F5DD23001FDCFA /* RecipeEntity.swift in Sources */,
-				5C24C69723E5E109004ED8D9 /* UniverselTableViewCell.swift in Sources */,
+				5C24C69723E5E109004ED8D9 /* SetUpCells.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

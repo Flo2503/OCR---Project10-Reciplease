@@ -47,7 +47,7 @@ class SearchViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        config.cornerRadius([addButton, clearButton, searchButton])
+        ThemeConfig.cornerRadius([addButton, clearButton, searchButton])
         textNavBar()
     }
 

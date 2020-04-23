@@ -13,7 +13,6 @@ class DetailRecipeViewController: UIViewController {
 
     // MARK: - Properties, instances
     private let webService = EdamamWebService()
-    private let config = ThemeConfig()
     var recipe: Recipes?
     let defaultValue = " - "
 
@@ -42,10 +41,10 @@ class DetailRecipeViewController: UIViewController {
     // MARK: - Methods
     override func viewDidLoad() {
         super.viewDidLoad()
-        config.cornerRadius([getDirectionsButton])
+        ThemeConfig.cornerRadius([getDirectionsButton])
+        ThemeConfig.setUpInfoView(view: infoView)
         textNavBar()
         displayDetails()
-        smallViewConfig()
         ingredientsDetail.reloadData()
         backButton()
     }
@@ -123,12 +122,6 @@ extension DetailRecipeViewController {
         } else {
             favoriteButton.image = UIImage(named: "top_off")
         }
-    }
-
-    private func smallViewConfig() {
-        self.infoView.layer.cornerRadius = 7
-        self.infoView.layer.borderWidth = 2
-        self.infoView.layer.borderColor = UIColor(red: 222/255, green: 225/255, blue: 227/255, alpha: 1).cgColor
     }
 
     private func displayDetails() {
