@@ -15,7 +15,7 @@
 ## Ingredients 
 First thing first, enter the ingredients :  
     
- <img src="AppImages/Ingredients.png" width="180">
+ <img src="AppImages/IngredientsList.png" width="180">
 
 ## Recipes List
 Tap on "Search for recipes" and Reciplease will display a list of recipes :       
@@ -25,7 +25,7 @@ Tap on "Search for recipes" and Reciplease will display a list of recipes :
 ## Details 
 Tap on the recipe that interests you and Reciplease will display the ingredients and quantity you'll need :  
  
-  <img src="AppImages/Details1.png" width="180">   
+  <img src="AppImages/Details.png" width="180">   
 
 ## Get Directions 
 Tap on "Get directions" to access the recipe website and recipe details :    
