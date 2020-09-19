@@ -14,7 +14,6 @@ class SetUpCells: UITableViewCell {
     private let webService = EdamamWebService()
 
     // MARK: - Outlets
-    @IBOutlet weak var infoView: UIView!
     @IBOutlet weak var totalTimeCell: UILabel!
     @IBOutlet weak var likesCell: UILabel!
     @IBOutlet weak var titleCell: UILabel!
@@ -24,7 +23,6 @@ class SetUpCells: UITableViewCell {
     // MARK: - Methods
     override func awakeFromNib() {
         super.awakeFromNib()
-        ThemeConfig.setUpInfoView(view: infoView)
     }
 
     //// Allow to display image in cels

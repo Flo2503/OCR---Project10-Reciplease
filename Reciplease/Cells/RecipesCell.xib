@@ -9,7 +9,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="hYJ-jl-V06">
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="170" id="hYJ-jl-V06" customClass="SetUpCells" customModule="Reciplease" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="616" height="281"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hYJ-jl-V06" id="NQQ-xD-07x">
@@ -117,6 +117,13 @@
                     <constraint firstAttribute="bottom" secondItem="ag6-s9-E4n" secondAttribute="bottom" id="y9N-xU-ldr"/>
                 </constraints>
             </tableViewCellContentView>
+            <connections>
+                <outlet property="imageCell" destination="Y8r-fA-I9F" id="HKK-8W-goG"/>
+                <outlet property="likesCell" destination="OD2-xR-Gtm" id="CNq-4c-jgw"/>
+                <outlet property="subtitleCell" destination="An1-tA-qsd" id="bhC-9e-j56"/>
+                <outlet property="titleCell" destination="nE0-0M-tWD" id="6Yv-gN-ZZd"/>
+                <outlet property="totalTimeCell" destination="Roa-lY-Q5s" id="yqk-Fh-4eJ"/>
+            </connections>
             <point key="canvasLocation" x="-394.20289855072468" y="64.620535714285708"/>
         </tableViewCell>
     </objects>

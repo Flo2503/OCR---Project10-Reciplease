@@ -33,6 +33,7 @@ class FavoriteViewController: UIViewController {
     }
 
     override func viewDidLoad() {
+        setupTableView()
         textNavBar()
     }
 
@@ -55,6 +56,13 @@ class FavoriteViewController: UIViewController {
         navigationController?.navigationBar.titleTextAttributes =
         [NSAttributedString.Key.foregroundColor: UIColor.white,
          NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
+    }
+
+    private func setupTableView() {
+        favoriteTableView.tableFooterView = UIView()
+        favoriteTableView.rowHeight = UITableView.automaticDimension
+        favoriteTableView.estimatedRowHeight = 170
+        favoriteTableView.register(UINib(nibName: "RecipesCell", bundle: nil), forCellReuseIdentifier: "RecipesCell")
     }
 }
 
