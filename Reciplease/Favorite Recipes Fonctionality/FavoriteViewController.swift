@@ -34,7 +34,6 @@ class FavoriteViewController: UIViewController {
 
     override func viewDidLoad() {
         setupTableView()
-        textNavBar()
     }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -52,16 +51,8 @@ class FavoriteViewController: UIViewController {
         }
     }
 
-    private func textNavBar() {
-        navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.foregroundColor: UIColor.white,
-         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
-    }
-
     private func setupTableView() {
-        favoriteTableView.tableFooterView = UIView()
-        favoriteTableView.rowHeight = UITableView.automaticDimension
-        favoriteTableView.estimatedRowHeight = 170
+        favoriteTableView.rowHeight = 200
         favoriteTableView.register(UINib(nibName: "RecipesCell", bundle: nil), forCellReuseIdentifier: "RecipesCell")
     }
 }
@@ -91,7 +82,7 @@ extension FavoriteViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath) as? SetUpCells else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as? SetUpCells else {
             return UITableViewCell()
         }
 

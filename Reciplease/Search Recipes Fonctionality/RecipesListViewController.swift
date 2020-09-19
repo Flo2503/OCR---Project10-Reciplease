@@ -26,7 +26,6 @@ class RecipesListViewController: UIViewController {
         super.viewDidLoad()
         setupTableView()
         getRecipes()
-        textNavBar()
      }
 
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -57,18 +56,10 @@ class RecipesListViewController: UIViewController {
         }
     }
 
-    private func textNavBar() {
-        navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.foregroundColor: UIColor.white,
-         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
-    }
-
     private func setupTableView() {
-        recipesTableView.rowHeight = UITableView.automaticDimension
-        recipesTableView.estimatedRowHeight = 170
+        recipesTableView.rowHeight = 200
         recipesTableView.register(UINib(nibName: "RecipesCell", bundle: nil), forCellReuseIdentifier: "RecipesCell")
     }
-
 }
 
 // MARK: - Extension allowing to congigure table view and cells details

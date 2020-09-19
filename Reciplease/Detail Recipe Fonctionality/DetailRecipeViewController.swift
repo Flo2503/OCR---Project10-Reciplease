@@ -43,7 +43,6 @@ class DetailRecipeViewController: UIViewController {
         super.viewDidLoad()
         ThemeConfig.cornerRadius([getDirectionsButton])
         ThemeConfig.setUpInfoView(view: infoView)
-        textNavBar()
         displayDetails()
         ingredientsDetail.reloadData()
         backButton()
@@ -134,11 +133,5 @@ extension DetailRecipeViewController {
             totalTimeLabel.text = defaultValue
             recipeName.text = defaultValue
         }
-    }
-
-    private func textNavBar() {
-        navigationController?.navigationBar.titleTextAttributes =
-        [NSAttributedString.Key.foregroundColor: UIColor.white,
-         NSAttributedString.Key.font: UIFont(name: "Chalkduster", size: 21)!]
     }
 }
