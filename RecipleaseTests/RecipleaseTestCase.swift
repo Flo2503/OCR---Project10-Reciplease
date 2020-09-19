@@ -55,4 +55,15 @@ class RecipleaseTestCase: XCTestCase {
 
         XCTAssertEqual(recipes, [fakeRecipe])
     }
+
+    func testGivenSomeFavorites_WhenDeleteAll_ThenFavoriteListIsEmpty() {
+
+        RecipeEntity.addRecipeToFavorite(recipes: fakeRecipe)
+
+        RecipeEntity.deleteAll()
+
+        let recipes = RecipeEntity.getAll().count
+
+        XCTAssertEqual(recipes, 0)
+    }
 }

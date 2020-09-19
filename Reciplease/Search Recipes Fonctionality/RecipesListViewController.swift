@@ -82,7 +82,7 @@ extension RecipesListViewController: UITableViewDataSource, UITableViewDelegate 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "RecipesCell", for: indexPath) as? SetUpCells else {
         return UITableViewCell()
-    }
+        }
 
         cell.imageForCells(url: (recipes[indexPath.row].image))
 
