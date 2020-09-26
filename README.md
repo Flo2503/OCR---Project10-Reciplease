@@ -14,8 +14,9 @@
 
 ## Ingredients 
 First thing first, enter the ingredients :  
-    
-                                       <img src="AppImages/ingredientsChoice.jpg" width="250">
+<p align="center">
+<img src="AppImages/ingredientsChoice.jpg" width="250">
+</p>
 
 ## Recipes List
 Tap on "Search for recipes" and Reciplease will display a list of recipes :       
