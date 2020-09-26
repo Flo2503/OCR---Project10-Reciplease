@@ -15,27 +15,27 @@
 ## Ingredients 
 First thing first, enter the ingredients :  
     
- <img src="AppImages/ingredientsChoice.jpg" width="200">
+ <img src="AppImages/ingredientsChoice.jpg" width="250">
 
 ## Recipes List
 Tap on "Search for recipes" and Reciplease will display a list of recipes :       
  
- <img src="AppImages/recipes.jpg" width="200">   
+ <img src="AppImages/recipes.jpg" width="250">   
 
 ## Details 
 Tap on the recipe that interests you and Reciplease will display the ingredients and quantity you'll need :  
  
-  <img src="AppImages/details.jpg" width="200">   
+  <img src="AppImages/details.jpg" width="250">   
 
 ## Get Directions 
 Tap on "Get directions" to access the recipe website and recipe details :    
   
-  <img src="AppImages/direction.jpg" width="200">   
+  <img src="AppImages/direction.jpg" width="250">   
 
 ## Favorite
 You'll can also save your favorite recipes in... the "Favorite" section :    
 
-  <img src="AppImages/fav.jpg" width="200">
+  <img src="AppImages/fav.jpg" width="250">
   
  # Enjoy !
 
